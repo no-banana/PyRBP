@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to RBP_package’s documentation! &mdash; RBP_package_test 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> RBP_package_test
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_operation.html">RBP_package.filesOperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">RBP_package.Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_selection_methods.html">RBP_package.featureSelection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">RBP_package.evaluateClassifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">RBP_package.metricsPlot</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">RBP_package_test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to RBP_package’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-rbp-package-s-documentation">
+<h1>Welcome to RBP_package’s documentation!<a class="headerlink" href="#welcome-to-rbp-package-s-documentation" title="Permalink to this heading">¶</a></h1>
+<p><strong>Date:</strong> October 25, 2022. <strong>Version:</strong> 0.1.0</p>
+<p><strong>paper:</strong> it depends</p>
+<p><strong>Citing Us:</strong></p>
+<p>If you find RBP_package helpful in your work or research, we would greatly appreciate citations to the following paper</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">put</span> <span class="n">the</span> <span class="n">bib</span> <span class="n">here</span>
+</pre></div>
+</div>
+<p>RBP_package is a Python toolbox for quick generation, condensation, evaluation, and visualization of different features for RBP sequence data. It was built on the basis of scikit-learn and tensorflow. RBP_package includes three types of features, from the classical biological properties (seven categories) and semantic information (five categories) to secondary structure features.</p>
+<p><strong>RBP_package is featured for:</strong></p>
+<ul class="simple">
+<li><p>Unified, easy-to-use APIs, detailed documentation and examples.</p></li>
+<li><p>Capable for out-of-the-box one-stop sequencing analysis (feature generation, condensation, model training, performance evaluation, visualization).</p></li>
+<li><p>Full compatibility with other popular packages like scikit-learn and yellowbrick.</p></li>
+</ul>
+<p><strong>API Demo</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">RBP_package.filesOperation</span> <span class="kn">import</span> <span class="n">read_fasta_file</span><span class="p">,</span> <span class="n">read_label</span>
+<span class="kn">from</span> <span class="nn">RBP_package.biologicalFeatures</span> <span class="kn">import</span> <span class="n">generateBPFeatures</span>
+<span class="kn">from</span> <span class="nn">RBP_package.languageFeatures</span> <span class="kn">import</span> <span class="n">generateDynamicLMFeatures</span>
+<span class="kn">from</span> <span class="nn">RBP_package.evaluateClassifiers</span> <span class="kn">import</span> <span class="n">evaluateDLclassifers</span>
+<span class="kn">from</span> <span class="nn">RBP_package.structureFeatures</span> <span class="kn">import</span> <span class="n">generateStructureFeatures</span>
+<span class="kn">from</span> <span class="nn">RBP_package.metricsPlot</span> <span class="kn">import</span> <span class="n">violinplot</span><span class="p">,</span> <span class="n">shap_interaction_scatter</span>
+<span class="kn">from</span> <span class="nn">RBP_package.featureSelection</span> <span class="kn">import</span> <span class="n">cife</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
+<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
+
+<span class="n">sequences</span> <span class="o">=</span> <span class="n">read_fasta_file</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">)</span>  <span class="c1"># read sequences and labels from given path</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">label_path</span><span class="p">)</span>
+
+<span class="n">biological_features</span> <span class="o">=</span> <span class="n">generateBPFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">PGKM</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># generate biological features</span>
+<span class="n">bert_features</span> <span class="o">=</span> <span class="n">generateDynamicLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;circRNA&#39;</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># generate dynamic semantic information</span>
+<span class="n">structure_features</span> <span class="o">=</span> <span class="n">generateStructureFeatures</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">,</span> <span class="n">basic_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package_test/src/circRNAdatasetAGO1&#39;</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># generate secondary structure information</span>
+
+<span class="n">refined_biological_features</span> <span class="o">=</span> <span class="n">cife</span><span class="p">(</span><span class="n">biological_features</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">num_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># refine the biologcial_feature using cife feature selection method</span>
+
+<span class="n">evaluateDLclassifers</span><span class="p">(</span><span class="n">bert_features</span><span class="p">,</span> <span class="n">folds</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># evaluate CNN, RNN, ResNet-1D and MLP using dynamic semantic information</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">probability</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">shap_interaction_scatter</span><span class="p">(</span><span class="n">refined_biological_features</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">clf</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">feature_size</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>  <span class="c1"># Plotting the interaction between biological features in SVM</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#about-rbp-package">About <code class="docutils literal notranslate"><span class="pre">RBP_package</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#install-rbp-package">Install RBP_package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_operation.html">RBP_package.filesOperation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_operation.html#rbp-package-filesoperation-read-fasta-file">RBP_package.filesOperation.read_fasta_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_operation.html#rbp-package-filesoperation-read-label">RBP_package.filesOperation.read_label</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">RBP_package.Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="RNA_features.html#rbp-package-features-biologicalfeatures">RBP_package.Features.biologicalFeatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RNA_features.html#rbp-package-features-languagefeatures">RBP_package.Features.languageFeatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RNA_features.html#rbp-package-features-structurefeature">RBP_package.Features.structureFeature</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="feature_selection_methods.html">RBP_package.featureSelection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-cife">RBP_package.featureSelection.cife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-cmim">RBP_package.featureSelection.cmim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-disr">RBP_package.featureSelection.disr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-icap">RBP_package.featureSelection.icap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-jmi">RBP_package.featureSelection.jmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-mifs">RBP_package.featureSelection.mifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-mim">RBP_package.featureSelection.mim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-mrmr">RBP_package.featureSelection.mrmr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-fisherscore">RBP_package.featureSelection.fisherScore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-relief-f">RBP_package.featureSelection.relief_f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-traceratio">RBP_package.featureSelection.traceRatio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-lll21">RBP_package.featureSelection.llL21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-lsl21">RBP_package.featureSelection.lsL21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-cfs">RBP_package.featureSelection.cfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-chisquare">RBP_package.featureSelection.chiSquare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-fscore">RBP_package.featureSelection.fScore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-giniindex">RBP_package.featureSelection.giniIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_selection_methods.html#rbp-package-featureselection-tscore">RBP_package.featureSelection.tScore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">RBP_package.evaluateClassifiers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="evaluate_classifiers.html#rbp-package-evaluateclassifiers-evaluatedlclassifers">RBP_package.evaluateClassifiers.evaluateDLclassifers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluate_classifiers.html#rbp-package-evaluateclassifiers-evaluatemlclassifers">RBP_package.evaluateClassifiers.evaluateMLclassifers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">RBP_package.metricsPlot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-roc-curve-deeplearning">RBP_package.metricsPlot.roc_curve_deeplearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-roc-curve-machinelearning">RBP_package.metricsPlot.roc_curve_machinelearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-partial-dependence">RBP_package.metricsPlot.partial_dependence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-confusion-matirx-deeplearning">RBP_package.metricsPlot.confusion_matirx_deeplearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-confusion-matrix-machinelearning">RBP_package.metricsPlot.confusion_matrix_machinelearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-det-curve-machinelearning">RBP_package.metricsPlot.det_curve_machinelearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-det-curve-deeplearning">RBP_package.metricsPlot.det_curve_deeplearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-precision-recall-curve-machinelearning">RBP_package.metricsPlot.precision_recall_curve_machinelearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-precision-recall-curve-deeplearning">RBP_package.metricsPlot.precision_recall_curve_deeplearning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-shap-bar">RBP_package.metricsPlot.shap_bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-shap-scatter">RBP_package.metricsPlot.shap_scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-shap-waterfall">RBP_package.metricsPlot.shap_waterfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-shap-interaction-scatter">RBP_package.metricsPlot.shap_interaction_scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-shap-beeswarm">RBP_package.metricsPlot.shap_beeswarm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-shap-heatmap">RBP_package.metricsPlot.shap_heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-violinplot">RBP_package.metricsPlot.violinplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-boxplot">RBP_package.metricsPlot.boxplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-pointplot">RBP_package.metricsPlot.pointplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-barplot">RBP_package.metricsPlot.barplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-sns-heatmap">RBP_package.metricsPlot.sns_heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-prediction-error">RBP_package.metricsPlot.prediction_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-descrimination-threshold">RBP_package.metricsPlot.descrimination_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-learning-curve">RBP_package.metricsPlot.learning_curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_plots.html#rbp-package-metricsplot-cross-validation-score">RBP_package.metricsPlot.cross_validation_score</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Yansong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
