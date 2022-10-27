@@ -31,18 +31,18 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    :maxdepth: 2
    :caption: Getting Started
 
-   ./getting_started.md
-   ./Installation.md
+   ./getting_started.rst
+   ./Installation.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: API
 
-   ./file_operation.md
-   ./RNA_features.md
-   ./feature_selection_methods.md
-   ./evaluate_classifiers.md
-   ./analysis_plots.md
+   ./file_operation.rst
+   ./RNA_features.rst
+   ./feature_selection_methods.rst
+   ./evaluate_classifiers.rst
+   ./analysis_plots.rst
 
 
 
