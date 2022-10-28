@@ -45,6 +45,8 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    ./analysis_plots.rst
 
 
+.. Note:: Admonitions can be handy to break up a
+   long boring technical document.
 
 
 Indices and tables
