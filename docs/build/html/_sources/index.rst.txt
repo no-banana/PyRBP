@@ -45,7 +45,8 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    ./analysis_plots.rst
 
 
-.. :: It's bigger than a bread box.
+.. ::
+It's bigger than a bread box.
 
 
 Indices and tables
