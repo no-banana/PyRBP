@@ -13,8 +13,8 @@ RBP_package.filesOperation
         >hsa_circ_0000038 start:189,end:318
         CCGTCCCCCCCACTGCCTACTCATATACCTCCAGAGCCTCCACGCACCCCTCCATTCCCTGCTAAGACTTTTCAAGTTGTGCCAGAAATTGAGTTTCCACC
 
-    :Parameters: | fasta_file:str, default=`'
-                       Absolute/relative paths to fasta sequence files
+    :Parameters:
+        .. rubric:: fasta_file:str, default=''
 
 
 RBP_package.filesOperation.read_label
