@@ -44,9 +44,6 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    ./evaluate_classifiers.rst
    ./analysis_plots.rst
 
-.. object::
-   testtest
-
 
 Indices and tables
 ==================

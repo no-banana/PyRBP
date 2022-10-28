@@ -1,10 +1,10 @@
-``RBP_package.filesOperation``
+RBP_package.filesOperation
 ===================================================
-This instruction illustartes how to operate files in RBP_package
 
-RBP_package.filesOperation.read_fasta_file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-test for 1
+.. object::
+    *function* RBP_package.filesOperation.read_fasta_file*(fasta_file='')*
+
+
 
 RBP_package.filesOperation.read_label
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
