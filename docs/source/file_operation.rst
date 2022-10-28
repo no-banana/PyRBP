@@ -13,16 +13,8 @@ RBP_package.filesOperation
         >hsa_circ_0000038 start:189,end:318
         CCGTCCCCCCCACTGCCTACTCATATACCTCCAGAGCCTCCACGCACCCCTCCATTCCCTGCTAAGACTTTTCAAGTTGTGCCAGAAATTGAGTTTCCACC
 
-    :Date: 2001-08-16
-    :Version: 1
-    :Authors: - Me
-              - Myself
-              - I
-    :Indentation: Since the field marker may be quite long, the second
-         and subsequent lines of the field body do not have to line up
-         with the first line, but they must be indented relative to the
-         field name marker, and they must line up with each other.
-    :Parameter i: integer
+    :Parameters: - fasta_file:str, default=''
+                    Absolute/relative paths to fasta sequence files
 
 
 RBP_package.filesOperation.read_label
