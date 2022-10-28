@@ -44,9 +44,11 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    ./evaluate_classifiers.rst
    ./analysis_plots.rst
 
+.. topic:: Topic Title
 
-.. ::
-It's bigger than a bread box.
+    Subsequent indented lines comprise
+    the body of the topic, and are
+    interpreted as body elements.
 
 
 Indices and tables
