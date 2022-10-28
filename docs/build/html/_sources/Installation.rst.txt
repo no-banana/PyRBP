@@ -21,6 +21,8 @@ The following packages are requirements:
 
 Install RBP_package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+
     conda create -n RBP_package python=3.7.6
     conda activate RBP_package
     git clone https://github.com/no-banana/RBP_package.git
