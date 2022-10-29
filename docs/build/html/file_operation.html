@@ -48,7 +48,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RBP_package.filesOperation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#RBP_package.filesOperation.read_fasta_file"><code class="docutils literal notranslate"><span class="pre">RBP_package.filesOperation.read_fasta_file()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-filesoperation-read-label">RBP_package.filesOperation.read_label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.fileOperation.read_label"><code class="docutils literal notranslate"><span class="pre">RBP_package.fileOperation.read_label()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="RNA_features.html">RBP_package.Features</a></li>
@@ -99,18 +99,53 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">fasta_file:str,</span> <span class="pre">default=''\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span> <span class="pre">\</span></span></dt>
+<span class="sig-name descname"><span class="pre">fasta_file:str,</span> <span class="pre">default=''</span></span></dt>
 <dd></dd></dl>
 
-<p>fdsgjiofdsjpfgj</p>
+<p>Path to the fasta file (absolute path).</p>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">seqslst:list</span></span></dt>
+<dd></dd></dl>
+
+<p>The list used to store sequences from fasta file.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<section id="rbp-package-filesoperation-read-label">
-<h2>RBP_package.filesOperation.read_label<a class="headerlink" href="#rbp-package-filesoperation-read-label" title="Permalink to this heading">¶</a></h2>
-<p>test for 2</p>
-</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.fileOperation.read_label">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.fileOperation.</span></span><span class="sig-name descname"><span class="pre">read_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.fileOperation.read_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to read a label file in <cite>txt</cite> format in the following form.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">1</span>
+<span class="mi">0</span>
+<span class="mi">0</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">label_file:str,</span> <span class="pre">default=''</span></span></dt>
+<dd></dd></dl>
+
+<p>Path to the label file (absolute path).</p>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">label_ls:list</span></span></dt>
+<dd></dd></dl>
+
+<p>The list used to store labels according to the sequences. It will be transformed to array when the function returns.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

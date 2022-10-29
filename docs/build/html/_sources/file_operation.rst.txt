@@ -13,11 +13,30 @@ RBP_package.filesOperation
         >hsa_circ_0000038 start:189,end:318
         CCGTCCCCCCCACTGCCTACTCATATACCTCCAGAGCCTCCACGCACCCCTCCATTCCCTGCTAAGACTTTTCAAGTTGTGCCAGAAATTGAGTTTCCACC
 
-    :Parameters: .. class:: fasta_file:str, default=''\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+    :Parameters: .. class:: fasta_file:str, default=''
 
-                        fdsgjiofdsjpfgj
+                        Path to the fasta file (absolute path).
 
+    :Attributes: .. class:: seqslst:list
 
-RBP_package.filesOperation.read_label
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-test for 2
+                        The list used to store sequences from fasta file.
+
+.. py:function:: RBP_package.fileOperation.read_label(label_file='')
+
+    This function is used to read a label file in `txt` format in the following form.
+    ::
+
+        0
+        1
+        1
+        0
+        0
+
+    :Parameters: .. class:: label_file:str, default=''
+
+                        Path to the label file (absolute path).
+
+    :Attributes: .. class:: label_ls:list
+
+                        The list used to store labels according to the sequences. It will be transformed to array when the function returns.
+
