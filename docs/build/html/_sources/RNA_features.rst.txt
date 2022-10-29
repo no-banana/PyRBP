@@ -6,27 +6,27 @@ RBP_package.Features
     This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).
 
     :Parameters:
-                 .. class:: sequences:list or array, necessary parameters
+                .. class:: sequences:list or array, necessary parameters
 
                         List or array of sequences used to generate features.
 
 
-                 .. class:: pseudoKNC:bool, default=False
+                .. class:: pseudoKNC:bool, default=False
 
                         Whether to use pseudoKNC algorithm to generate features, if ``True``, the value of the parameter ktuple will be used for subsequent feature generation.
 
 
-                 .. class:: ktuple:int, default=3
+                .. class:: ktuple:int, default=3
 
                         Used to determine the number of bases for each tuple in `pseudoKNC` in the values of ``[3, 4, 5]``.
 
 
-                 .. class:: zCurve:bool, default=False
+                .. class:: zCurve:bool, default=False
 
                         Whether to use zCurve algorithm to generate features.
 
 
-                 .. class:: gcContent:bool, default=False
+                .. class:: gcContent:bool, default=False
 
                         Whether to use gcContent algorithm to generate features.
 
