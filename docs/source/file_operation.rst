@@ -15,6 +15,8 @@ RBP_package.filesOperation
 
     :Parameters: .. class:: fasta_file:str, default=''
 
+                    fdsgjiofdsjpfgj
+
 
 RBP_package.filesOperation.read_label
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
