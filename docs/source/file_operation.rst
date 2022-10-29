@@ -14,8 +14,7 @@ RBP_package.filesOperation
         CCGTCCCCCCCACTGCCTACTCATATACCTCCAGAGCCTCCACGCACCCCTCCATTCCCTGCTAAGACTTTTCAAGTTGTGCCAGAAATTGAGTTTCCACC
 
     :Parameters: .. class:: fasta_file:str, default=''
-
-                    fdsgjiofdsjpfgj
+                     fdsgjiofdsjpfgj
 
 
 RBP_package.filesOperation.read_label
