@@ -48,8 +48,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="file_operation.html">RBP_package.filesOperation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RBP_package.Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#generateBPFeatures"><code class="docutils literal notranslate"><span class="pre">generateBPFeatures()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-features-languagefeatures">RBP_package.Features.languageFeatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.Features.generateBPFeatures"><code class="docutils literal notranslate"><span class="pre">RBP_package.Features.generateBPFeatures()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.Features.generateDynamicLMFeatures"><code class="docutils literal notranslate"><span class="pre">RBP_package.Features.generateDynamicLMFeatures()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.Features.generateStaticLMFeatures"><code class="docutils literal notranslate"><span class="pre">RBP_package.Features.generateStaticLMFeatures()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rbp-package-features-structurefeature">RBP_package.Features.structureFeature</a></li>
 </ul>
 </li>
@@ -84,9 +85,9 @@
              
   <section id="rbp-package-features">
 <h1>RBP_package.Features<a class="headerlink" href="#rbp-package-features" title="Permalink to this heading">¶</a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="generateBPFeatures">
-<span class="sig-name descname"><span class="pre">generateBPFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudoKNC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zCurve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcContent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AUSkew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAURatio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PGKM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NPCP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#generateBPFeatures" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="RBP_package.Features.generateBPFeatures">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.Features.</span></span><span class="sig-name descname"><span class="pre">generateBPFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudoKNC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zCurve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcContent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AUSkew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAURatio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PGKM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NPCP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.Features.generateBPFeatures" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -168,11 +169,95 @@
 <p class="admonition-title">Note</p>
 <p>The values of gapValue, kValue and mValue greatly affect the number of feature dimensions generated by the PGKM algorithm, the larger the values of these three parameters, the longer the running time of PGKM. Please set the parameter values according to your needs.</p>
 </div>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:list</span> <span class="pre">of</span> <span class="pre">feature</span> <span class="pre">according</span> <span class="pre">to</span> <span class="pre">each</span> <span class="pre">sequence</span></span></dt>
+<dd><p>Used to store the final generated features for each sequence. When the function returns, it has been converted to an array.</p>
 </dd></dl>
 
-<section id="rbp-package-features-languagefeatures">
-<h2>RBP_package.Features.languageFeatures<a class="headerlink" href="#rbp-package-features-languagefeatures" title="Permalink to this heading">¶</a></h2>
-</section>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">feature:list</span> <span class="pre">of</span> <span class="pre">feature</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">one</span> <span class="pre">sequence</span></span></dt>
+<dd><p>Used Used to store the various features of the sequence being processed.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.Features.generateDynamicLMFeatures">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.Features.</span></span><span class="sig-name descname"><span class="pre">generateDynamicLMFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.Features.generateDynamicLMFeatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to generate the dynamic semantic information matrix of the sequence, in which we provide the fine-tuned <code class="docutils literal notranslate"><span class="pre">BERT</span> <span class="pre">models</span> <span class="pre">(RBPBERT)</span></code> for the RBP classification problem. The models can be downloaded from <a class="reference external" href="https://figshare.com/articles/software/LM_for_RBP_package/21383187">figshare link</a>. When extraction is complete, the dimension of the feature matrix obtained is (<code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">sequences</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">tokens</span> <span class="pre">per</span> <span class="pre">sequence</span></code>, <code class="docutils literal notranslate"><span class="pre">768</span></code>), where <code class="docutils literal notranslate"><span class="pre">768</span></code> indicates 768 hidden units of 12 attention heads in the last transformer layer.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sequences:list</span> <span class="pre">or</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><p>List or array of sequences used to generate features.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">kmer:int,</span> <span class="pre">default=3</span></span></dt>
+<dd><p>kmer specifies the window size to be used when tokenizing sequences. There are four window sizes to choose from <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">model:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>The path where the downloaded <code class="docutils literal notranslate"><span class="pre">RBPBERT</span></code> model is stored, it should be noted that when passing parameters, only the <cite>absolute path</cite> to the folder where the model is located should be passed in, as in the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">wangyansong</span><span class="o">/</span><span class="n">RBP_package</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">RBP_apckage_no_banana</span><span class="o">/</span><span class="n">dynamicRNALM</span><span class="o">/</span><span class="n">circleRNA</span><span class="o">/</span><span class="n">pytorch_model_3mer</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.Features.generateStaticLMFeatures">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.Features.</span></span><span class="sig-name descname"><span class="pre">generateStaticLMFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.Features.generateStaticLMFeatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>There are four static semantic models available in the RBP_package: <code class="docutils literal notranslate"><span class="pre">fasttext</span></code>, <code class="docutils literal notranslate"><span class="pre">GloVe</span></code>, <code class="docutils literal notranslate"><span class="pre">word2vec</span></code> and <code class="docutils literal notranslate"><span class="pre">doc2vec</span></code>. These models can be downloaded from <a class="reference external" href="https://figshare.com/articles/software/LM_for_RBP_package/21383187">figshare link</a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sequences:list</span> <span class="pre">or</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><p>List or array of sequences used to generate features.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">kmer:int,</span> <span class="pre">default=3</span></span></dt>
+<dd><p>kmer specifies the window size to be used when tokenizing sequences. There are four window sizes to choose from <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">model:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>The path where the downloaded <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">semantic</span> <span class="pre">model</span></code> is stored, it should be noted that when passing parameters, you need to be careful that the model path passed in is consistent with <code class="docutils literal notranslate"><span class="pre">kmer</span></code>.</p>
+</dd></dl>
+
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">LM_type:str,</span> <span class="pre">['word2vec',</span> <span class="pre">'fasttext',</span> <span class="pre">'doc2vec',</span> <span class="pre">'GloVe']</span></span></dt>
+<dd><p>Separated from the incoming model file name, used to distinguish different models when extracting embedding.</p>
+</dd></dl>
+
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since both of the above modules need to separate some required information from the model names to perform matching checks, please do not make any changes to the downloaded model file names when using dynamic or static language models for semantic feature extraction, otherwise it may cause the module not to work properly.</p>
+</div>
+</dd></dl>
+
 <section id="rbp-package-features-structurefeature">
 <h2>RBP_package.Features.structureFeature<a class="headerlink" href="#rbp-package-features-structurefeature" title="Permalink to this heading">¶</a></h2>
 </section>
