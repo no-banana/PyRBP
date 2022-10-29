@@ -1,11 +1,12 @@
 RBP_package.Features
 ==================================
 
-.. py:function:: def generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, AUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, NPCP=False)
+.. py:function:: generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, AUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, NPCP=False)
 
     This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).
 
-    :Parameters: .. class:: sequences:list or array, necessary parameters
+    :Parameters:
+                 .. class:: sequences:list or array, necessary parameters
 
                         List or array of sequences used to generate features.
 
