@@ -83,7 +83,96 @@
              
   <section id="rbp-package-features">
 <h1>RBP_package.Features<a class="headerlink" href="#rbp-package-features" title="Permalink to this heading">¶</a></h1>
-<p>This instruction illustartes how to generate different types of features in RBP_package</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">def</span> <span class="pre">generateBPFeatures(sequences,</span> <span class="pre">pseudoKNC=False,</span> <span class="pre">ktuple=3,</span> <span class="pre">zCurve=False,</span> <span class="pre">gcContent=False,</span> <span class="pre">AUSkew=False,</span> <span class="pre">GCAURatio=False,</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PGKM=False,</span> <span class="pre">gapValue=1,</span> <span class="pre">kValue=2,</span> <span class="pre">mValue=2,</span> <span class="pre">NPCP=False)</span></span></dt>
+<dd><p>This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sequences:list</span> <span class="pre">or</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><blockquote>
+<div><p>List or array of sequences used to generate features.</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pseudoKNC:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use pseudoKNC algorithm to generate features, if <code class="docutils literal notranslate"><span class="pre">True</span></code>, the value of the parameter ktuple will be used for subsequent feature generation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">ktuple:int,</span> <span class="pre">default=3</span></span></dt>
+<dd><p>Used to determine the number of bases for each tuple in <cite>pseudoKNC</cite> in the values of <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">zCurve:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use zCurve algorithm to generate features.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">gcContent:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use gcContent algorithm to generate features.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">AUSkew:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use AUSkew algorithm to generate features.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">GCAURatio:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use GCAURatio algorithm to generate features.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PGKM:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use PGKM algorithm to generate features. if <code class="docutils literal notranslate"><span class="pre">True</span></code>, the value of the parameter gapValue, kValue and mValue will be used for subsequent feature generation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">gapValue:int,</span> <span class="pre">default=1</span></span></dt>
+<dd><p>Used to determine the number of gaps between each two tuples. Its value is limited to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">kValue:int,</span> <span class="pre">default=2</span></span></dt>
+<dd><p>Used to determine the number of bases for the first tuple in <cite>PGKM</cite>, the value is limited to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">mValue:int,</span> <span class="pre">default=2</span></span></dt>
+<dd><p>Used to determine the number of bases for the second tuple in <cite>PGKM</cite>, the value is limited to <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2]</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NPCP:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use NPCP algorithm to generate features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values of gapValue, kValue and mValue greatly affect the number of feature dimensions generated by the PGKM algorithm, the larger the values of these three parameters, the longer the running time of PGKM. Please set the parameter values according to your needs.</p>
+</div>
+</dd></dl>
+
 <section id="rbp-package-features-languagefeatures">
 <h2>RBP_package.Features.languageFeatures<a class="headerlink" href="#rbp-package-features-languagefeatures" title="Permalink to this heading">¶</a></h2>
 </section>
