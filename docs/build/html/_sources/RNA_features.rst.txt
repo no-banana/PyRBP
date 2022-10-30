@@ -116,7 +116,7 @@ RBP_package.Features
 
 .. py:function:: RBP_package.Features.generateStructureFeatures(dataset_path='', script_path='', basic_path='',  W=101, L=70, u=1, dataset_name='')
 
-    This function calls ``RNAplfold`` to calculate locally stable secondary structure - pair probabilities [CITRNAplfold]_. The respective scripts of ``RNAplfold`` can be downloaded at `figshare link <https://figshare.com/articles/software/LM_for_RBP_package/21383187>`_.
+    This function calls ``RNAplfold`` to calculate locally stable secondary structure - pair probabilities [RNAplfold]_. The respective scripts of ``RNAplfold`` can be downloaded at `figshare link <https://figshare.com/articles/software/LM_for_RBP_package/21383187>`_.
 
     :Parameters:
                 .. class:: dataset_path:str, default=''
@@ -180,4 +180,4 @@ RBP_package.Features
 
 
 
-    .. [CITRNAplfold] R. Lorenz, S.H. Bernhart, C. Hoener zu Siederdissen, H. Tafer, C. Flamm, P.F. Stadler and I.L. Hofacker (2011), "ViennaRNA Package 2.0", Algorithms for Molecular Biology: 6:26
+    .. [RNAplfold] R. Lorenz, S.H. Bernhart, C. Hoener zu Siederdissen, H. Tafer, C. Flamm, P.F. Stadler and I.L. Hofacker (2011), "ViennaRNA Package 2.0", Algorithms for Molecular Biology: 6:26
