@@ -60,11 +60,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mifs"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mifs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mim"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mim()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mrmr"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mrmr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#similarity-based">Similarity based</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.fisherScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.fisherScore()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.relief_f"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.relief_f()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.traceRatio"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.traceRatio()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sparse-learning-based">Sparse learning based</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.llL21"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.llL21()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.lsL21"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.lsL21()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#statistical-based">Statistical based</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cfs"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cfs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.chiSquare"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.chiSquare()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.fScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.fScore()</span></code></a></li>
@@ -104,6 +113,7 @@
              
   <section id="rbp-package-featureselection">
 <h1>RBP_package.featureSelection<a class="headerlink" href="#rbp-package-featureselection" title="Permalink to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">RBP_package</span></code> integrates feature selection methods based on four different evaluation approaches (information theoretical based, similarity based, sparse learning based and statistical based)</p>
 <section id="information-theoretical-based">
 <h2>Information theoretical based<a class="headerlink" href="#information-theoretical-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
@@ -114,7 +124,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -142,7 +152,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -170,7 +180,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -198,7 +208,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -226,7 +236,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -254,7 +264,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -282,7 +292,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -310,7 +320,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -330,6 +340,9 @@
 </dl>
 </dd></dl>
 
+</section>
+<section id="similarity-based">
+<h2>Similarity based<a class="headerlink" href="#similarity-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="RBP_package.featureSelection.fisherScore">
 <span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fisherScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.fisherScore" title="Permalink to this definition">¶</a></dt>
@@ -338,7 +351,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -366,7 +379,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -394,7 +407,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -414,6 +427,9 @@
 </dl>
 </dd></dl>
 
+</section>
+<section id="sparse-learning-based">
+<h2>Sparse learning based<a class="headerlink" href="#sparse-learning-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="RBP_package.featureSelection.llL21">
 <span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">llL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.llL21" title="Permalink to this definition">¶</a></dt>
@@ -422,7 +438,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -450,7 +466,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -470,6 +486,9 @@
 </dl>
 </dd></dl>
 
+</section>
+<section id="statistical-based">
+<h2>Statistical based<a class="headerlink" href="#statistical-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="RBP_package.featureSelection.cfs">
 <span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cfs" title="Permalink to this definition">¶</a></dt>
@@ -478,7 +497,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -506,7 +525,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -534,7 +553,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -562,7 +581,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 
@@ -590,7 +609,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(``n_samples``,</span> <span class="pre">``n_features``)</span></span></dt>
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
 <dd><p>Sample feature matrix to be processed.</p>
 </dd></dl>
 

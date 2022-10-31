@@ -1,6 +1,8 @@
 RBP_package.featureSelection
 ==============================================
 
+The ``RBP_package`` integrates feature selection methods based on four different evaluation approaches (information theoretical based, similarity based, sparse learning based and statistical based)
+
 Information theoretical based
 ----------------------------------------------
 
@@ -9,7 +11,7 @@ Information theoretical based
     This function uses Conditional Infomax Feature Extraction [CIFE]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -28,7 +30,7 @@ Information theoretical based
     This function uses Conditional Mutual Information Maximization [CMIM]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -45,7 +47,7 @@ Information theoretical based
     This function uses Double Input Symmetrical Relevance [DISR]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -62,7 +64,7 @@ Information theoretical based
     This function uses mutual information [ICAP]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -79,7 +81,7 @@ Information theoretical based
     This function uses Joint Mutual Information [JMI]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -96,7 +98,7 @@ Information theoretical based
     This function uses Mutual Information Feature Selection [MIFS]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -113,7 +115,7 @@ Information theoretical based
     This function uses Mutual Information Maximization [MIM]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -130,7 +132,7 @@ Information theoretical based
     This function uses Minimum Redundancy Maximum Relevance [MRMR]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -142,12 +144,15 @@ Information theoretical based
 
                         Number of selected features.
 
+Similarity based
+----------------------------------------------
+
 .. py:function:: RBP_package.featureSelection.fisherScore(features, labels, num_features=10)
 
     This function uses  Fisher Score [fisherscore]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -164,7 +169,7 @@ Information theoretical based
     This function uses ReliefF [reliefF]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -181,7 +186,7 @@ Information theoretical based
     This function uses Trace Ratio Criterion [traceratio]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -193,12 +198,15 @@ Information theoretical based
 
                         Number of selected features.
 
+Sparse learning based
+----------------------------------------------
+
 .. py:function:: RBP_package.featureSelection.llL21(features, labels, num_features=10)
 
     This function uses l2,1-norm regularization-based feature selection method [lll21]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -215,7 +223,7 @@ Information theoretical based
     This function uses l2,1-norm regularization-based feature selection method [lsl21]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -227,12 +235,15 @@ Information theoretical based
 
                         Number of selected features.
 
+Statistical based
+---------------------------
+
 .. py:function:: RBP_package.featureSelection.cfs(features, labels, num_features=10)
 
     This function uses correlation-based filter approach [CFS]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -249,7 +260,7 @@ Information theoretical based
     This function uses Chi-Square Score [chisquare]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -266,7 +277,7 @@ Information theoretical based
     This function uses F-score [fscore]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -283,7 +294,7 @@ Information theoretical based
     This function uses Gini Index [giniindex]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
@@ -300,7 +311,7 @@ Information theoretical based
     This function uses T-score [tscore]_ for feature selection and returns the corresponding best feature matrix.
 
     :Parameters:
-                .. class:: features:numpy array, shape (``n_samples``, ``n_features``)
+                .. class:: features:numpy array, shape (n_samples, n_features)
 
                         Sample feature matrix to be processed.
 
