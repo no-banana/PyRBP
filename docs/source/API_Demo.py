@@ -14,7 +14,7 @@ label = read_label(label_path)
 biological_features = generateBPFeatures(sequences, PGKM=True)  # generate biological features
 bert_features = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer')  # generate dynamic semantic information
 static_features = generateStaticLMFeatures(sequences, kmer=3, model='/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/staticRNALM/circleRNA/circRNA_3mer_fasttext')
-structure_features = generateStructureFeatures(fasta_path, shell_path='/home/wangyansong/RBP_package_test/src/RBP_package/RNAplfold', basic_path='/home/wangyansong/RBP_package_test/src/circRNAdatasetAGO1', W=101, L=70, u=1)  # generate secondary structure information
+structure_features = generateStructureFeatures(fasta_path, script_path='/home/wangyansong/RBP_package_test/src/RBP_package/RNAplfold', basic_path='/home/wangyansong/RBP_package_test/src/circRNAdatasetAGO1', W=101, L=70, u=1)  # generate secondary structure information
 
 refined_biological_features = cife(biological_features, label, num_features=10)  # refine the biologcial_feature using cife feature selection method
 
