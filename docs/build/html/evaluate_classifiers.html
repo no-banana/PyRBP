@@ -90,12 +90,80 @@
 <dt class="sig sig-object py" id="RBP_package.evaluateClassifiers.evaluateDLclassifers">
 <span class="sig-prename descclassname"><span class="pre">RBP_package.evaluateClassifiers.</span></span><span class="sig-name descname"><span class="pre">evaluateDLclassifers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.evaluateClassifiers.evaluateDLclassifers" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">RBP_package</span></code> integrates four classical deep learning models (CNN, RNN, MLP and ResNet), cross-validates them using the representation matrix on the four classes of models, and stores the final performance metrics obtained for each model in <code class="docutils literal notranslate"><span class="pre">DL_evalution_metrics.csv</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><p>Sequence feature matrix for training the four deep learning models.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><p>The label corresponding to each sequence (which indicates whether the corresponding sequence is the target sequence of the RBPs).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">file_path:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>Path for storing cross-validation result files.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">shuffle:bool,</span> <span class="pre">default=True</span></span></dt>
+<dd><p>Whether to perform disorder when dividing sequence subsets used for cross-validation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">folds:int,</span> <span class="pre">default=5</span></span></dt>
+<dd><p>Cross-validated folds, which divides the training set into 5 (or other values) subsets, where one subset is the validation set, and the other 9 subsets constitute the training set. Each subset needs to be performed once as a validation set.</p>
+</dd></dl>
+
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="RBP_package.evaluateClassifiers.evaluateMLclassifers">
 <span class="sig-prename descclassname"><span class="pre">RBP_package.evaluateClassifiers.</span></span><span class="sig-name descname"><span class="pre">evaluateMLclassifers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.evaluateClassifiers.evaluateMLclassifers" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="docutils literal notranslate"><span class="pre">RBP_package</span></code> integrates four classical deep learning models (CNN, RNN, MLP and ResNet), cross-validates them using the representation matrix on the four classes of models, and stores the final performance metrics obtained for each model in <code class="docutils literal notranslate"><span class="pre">ML_evalution_metrics.csv</span></code>.</p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">RBP_package</span></code> integrates eleven classical machine learning models (Logistic Regression, K-Nearest Neighbor, Decision Tree, GaussianNB, Bagging, Random Forest, AdaBoost, Gradient Boosting, SVM, LDA and ExtRa Trees), cross-validates them using the representation matrix on each model, and stores the final performance metrics obtained for each model in <code class="docutils literal notranslate"><span class="pre">ML_evalution_metrics.csv</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><p>Sequence feature matrix for training the machine learning models.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">necessary</span> <span class="pre">parameters</span></span></dt>
+<dd><p>The label corresponding to each sequence (which indicates whether the corresponding sequence is the target sequence of the RBPs).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">file_path:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>Path for storing cross-validation result files.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">shuffle:bool,</span> <span class="pre">default=True</span></span></dt>
+<dd><p>Whether to perform disorder when dividing sequence subsets used for cross-validation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">folds:int,</span> <span class="pre">default=5</span></span></dt>
+<dd><p>Cross-validated folds, which divides the training set into 5 (or other values) subsets, where one subset is the validation set, and the other 9 subsets constitute the training set. Each subset needs to be performed once as a validation set.</p>
+</dd></dl>
+
+</dd>
+</dl>
 </dd></dl>
 
 </section>
