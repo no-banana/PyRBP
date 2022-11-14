@@ -26,7 +26,7 @@ This two functions are used to evaluate the validity of the sequence representat
 
                 .. class:: folds:int, default=5
 
-                        Cross-validated folds, which divides the training set into 5 (or other values) subsets, where one subset is the validation set, and the other 9 subsets constitute the training set. Each subset needs to be performed once as a validation set.
+                        Cross-validated folds, which divides the training set into 5 (or other values) subsets, where one subset is the validation set, and the other ``fold - 1`` subsets constitute the training set. Each subset needs to be performed once as a validation set.
 
 
 .. py:function:: RBP_package.evaluateClassifiers.evaluateMLclassifers(features, labels, file_path='', shuffle=True, folds=5)
@@ -52,4 +52,4 @@ This two functions are used to evaluate the validity of the sequence representat
 
                 .. class:: folds:int, default=5
 
-                        Cross-validated folds, which divides the training set into 5 (or other values) subsets, where one subset is the validation set, and the other 9 subsets constitute the training set. Each subset needs to be performed once as a validation set.
+                        Cross-validated folds, which divides the training set into 5 (or other values) subsets, where one subset is the validation set, and the other ``fold - 1`` subsets constitute the training set. Each subset needs to be performed once as a validation set.
