@@ -52,30 +52,9 @@
 <li class="toctree-l1"><a class="reference internal" href="feature_selection_methods.html">RBP_package.featureSelection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">RBP_package.evaluateClassifiers</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">RBP_package.metricsPlot</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-roc-curve-deeplearning">RBP_package.metricsPlot.roc_curve_deeplearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-roc-curve-machinelearning">RBP_package.metricsPlot.roc_curve_machinelearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-partial-dependence">RBP_package.metricsPlot.partial_dependence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-confusion-matirx-deeplearning">RBP_package.metricsPlot.confusion_matirx_deeplearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-confusion-matrix-machinelearning">RBP_package.metricsPlot.confusion_matrix_machinelearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-det-curve-machinelearning">RBP_package.metricsPlot.det_curve_machinelearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-det-curve-deeplearning">RBP_package.metricsPlot.det_curve_deeplearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-precision-recall-curve-machinelearning">RBP_package.metricsPlot.precision_recall_curve_machinelearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-precision-recall-curve-deeplearning">RBP_package.metricsPlot.precision_recall_curve_deeplearning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-shap-bar">RBP_package.metricsPlot.shap_bar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-shap-scatter">RBP_package.metricsPlot.shap_scatter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-shap-waterfall">RBP_package.metricsPlot.shap_waterfall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-shap-interaction-scatter">RBP_package.metricsPlot.shap_interaction_scatter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-shap-beeswarm">RBP_package.metricsPlot.shap_beeswarm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-shap-heatmap">RBP_package.metricsPlot.shap_heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-violinplot">RBP_package.metricsPlot.violinplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-boxplot">RBP_package.metricsPlot.boxplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-pointplot">RBP_package.metricsPlot.pointplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-barplot">RBP_package.metricsPlot.barplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-sns-heatmap">RBP_package.metricsPlot.sns_heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-prediction-error">RBP_package.metricsPlot.prediction_error</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-descrimination-threshold">RBP_package.metricsPlot.descrimination_threshold</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-learning-curve">RBP_package.metricsPlot.learning_curve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbp-package-metricsplot-cross-validation-score">RBP_package.metricsPlot.cross_validation_score</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.metricsPlot.roc_curve_deeplearning"><code class="docutils literal notranslate"><span class="pre">RBP_package.metricsPlot.roc_curve_deeplearning()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.metricsPlot.roc_curve_machinelearning"><code class="docutils literal notranslate"><span class="pre">RBP_package.metricsPlot.roc_curve_machinelearning()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#RBP_package.metricsPlot.partial_dependence"><code class="docutils literal notranslate"><span class="pre">RBP_package.metricsPlot.partial_dependence()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -106,79 +85,162 @@
              
   <section id="rbp-package-metricsplot">
 <h1>RBP_package.metricsPlot<a class="headerlink" href="#rbp-package-metricsplot" title="Permalink to this heading">¶</a></h1>
-<p>This instruction illustartes how to plot multi-source figures in RBP_package</p>
-<section id="rbp-package-metricsplot-roc-curve-deeplearning">
-<h2>RBP_package.metricsPlot.roc_curve_deeplearning<a class="headerlink" href="#rbp-package-metricsplot-roc-curve-deeplearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-roc-curve-machinelearning">
-<h2>RBP_package.metricsPlot.roc_curve_machinelearning<a class="headerlink" href="#rbp-package-metricsplot-roc-curve-machinelearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-partial-dependence">
-<h2>RBP_package.metricsPlot.partial_dependence<a class="headerlink" href="#rbp-package-metricsplot-partial-dependence" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-confusion-matirx-deeplearning">
-<h2>RBP_package.metricsPlot.confusion_matirx_deeplearning<a class="headerlink" href="#rbp-package-metricsplot-confusion-matirx-deeplearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-confusion-matrix-machinelearning">
-<h2>RBP_package.metricsPlot.confusion_matrix_machinelearning<a class="headerlink" href="#rbp-package-metricsplot-confusion-matrix-machinelearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-det-curve-machinelearning">
-<h2>RBP_package.metricsPlot.det_curve_machinelearning<a class="headerlink" href="#rbp-package-metricsplot-det-curve-machinelearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-det-curve-deeplearning">
-<h2>RBP_package.metricsPlot.det_curve_deeplearning<a class="headerlink" href="#rbp-package-metricsplot-det-curve-deeplearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-precision-recall-curve-machinelearning">
-<h2>RBP_package.metricsPlot.precision_recall_curve_machinelearning<a class="headerlink" href="#rbp-package-metricsplot-precision-recall-curve-machinelearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-precision-recall-curve-deeplearning">
-<h2>RBP_package.metricsPlot.precision_recall_curve_deeplearning<a class="headerlink" href="#rbp-package-metricsplot-precision-recall-curve-deeplearning" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-shap-bar">
-<h2>RBP_package.metricsPlot.shap_bar<a class="headerlink" href="#rbp-package-metricsplot-shap-bar" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-shap-scatter">
-<h2>RBP_package.metricsPlot.shap_scatter<a class="headerlink" href="#rbp-package-metricsplot-shap-scatter" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-shap-waterfall">
-<h2>RBP_package.metricsPlot.shap_waterfall<a class="headerlink" href="#rbp-package-metricsplot-shap-waterfall" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-shap-interaction-scatter">
-<h2>RBP_package.metricsPlot.shap_interaction_scatter<a class="headerlink" href="#rbp-package-metricsplot-shap-interaction-scatter" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-shap-beeswarm">
-<h2>RBP_package.metricsPlot.shap_beeswarm<a class="headerlink" href="#rbp-package-metricsplot-shap-beeswarm" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-shap-heatmap">
-<h2>RBP_package.metricsPlot.shap_heatmap<a class="headerlink" href="#rbp-package-metricsplot-shap-heatmap" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-violinplot">
-<h2>RBP_package.metricsPlot.violinplot<a class="headerlink" href="#rbp-package-metricsplot-violinplot" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-boxplot">
-<h2>RBP_package.metricsPlot.boxplot<a class="headerlink" href="#rbp-package-metricsplot-boxplot" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-pointplot">
-<h2>RBP_package.metricsPlot.pointplot<a class="headerlink" href="#rbp-package-metricsplot-pointplot" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-barplot">
-<h2>RBP_package.metricsPlot.barplot<a class="headerlink" href="#rbp-package-metricsplot-barplot" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-sns-heatmap">
-<h2>RBP_package.metricsPlot.sns_heatmap<a class="headerlink" href="#rbp-package-metricsplot-sns-heatmap" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-prediction-error">
-<h2>RBP_package.metricsPlot.prediction_error<a class="headerlink" href="#rbp-package-metricsplot-prediction-error" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-descrimination-threshold">
-<h2>RBP_package.metricsPlot.descrimination_threshold<a class="headerlink" href="#rbp-package-metricsplot-descrimination-threshold" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-learning-curve">
-<h2>RBP_package.metricsPlot.learning_curve<a class="headerlink" href="#rbp-package-metricsplot-learning-curve" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="rbp-package-metricsplot-cross-validation-score">
-<h2>RBP_package.metricsPlot.cross_validation_score<a class="headerlink" href="#rbp-package-metricsplot-cross-validation-score" title="Permalink to this heading">¶</a></h2>
-</section>
+<p>Many visualization functions are integrated in RBP_package for plotting different types of data or performance analysis, which requires some dependencies such as <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, <code class="docutils literal notranslate"><span class="pre">shap</span></code> and <code class="docutils literal notranslate"><span class="pre">yellobrick</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.metricsPlot.roc_curve_deeplearning">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.metricsPlot.</span></span><span class="sig-name descname"><span class="pre">roc_curve_deeplearning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_proba_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.metricsPlot.roc_curve_deeplearning" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">label_list:list</span></span></dt>
+<dd><p>The list of label arrays corresponding to the sequences used to train each classifier, label value should be in {-1,1} or {0,1}.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">pred_proba_list:list</span></span></dt>
+<dd><p>The list of target score arrays corresponding to the sequences used to train each classifier, can either be probability estimates of the positive class, confidence values, or non-thresholded measure of decisions (as returned by “decision_function” on some classifiers).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">name_list:list</span></span></dt>
+<dd><p>The list of names corresponding to each classifier, the names in the list will be shown in final <code class="docutils literal notranslate"><span class="pre">.png</span></code> image file.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">image_path:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>The path used to store the final image file.</p>
+</dd></dl>
+
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">fpr:numpy</span> <span class="pre">array</span> <span class="pre">of</span> <span class="pre">shape</span> <span class="pre">(&gt;2,)</span></span></dt>
+<dd><p>False positive rate.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">tpr:numpy</span> <span class="pre">array</span> <span class="pre">of</span> <span class="pre">shape</span> <span class="pre">(&gt;2,)</span></span></dt>
+<dd><p>True positive rate.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.metricsPlot.roc_curve_machinelearning">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.metricsPlot.</span></span><span class="sig-name descname"><span class="pre">roc_curve_machinelearning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clf_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.metricsPlot.roc_curve_machinelearning" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array</span></span></dt>
+<dd><p>Two-dimensional real number matrix used to fit each classifiers.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array</span> <span class="pre">of</span> <span class="pre">shape</span> <span class="pre">(n_samples,)</span></span></dt>
+<dd><p>True binary labels. The value of labels should be in {-1, 1} or {0, 1}</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clf_list:list</span></span></dt>
+<dd><p>The list of <code class="docutils literal notranslate"><span class="pre">sklearn</span> <span class="pre">classifiers</span></code> used to analyse roc curve.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">image_path:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>The path used to store the final image file.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">test_size:float</span> <span class="pre">or</span> <span class="pre">int,</span> <span class="pre">default=0.25</span></span></dt>
+<dd><p>If float, should be between 0.0 and 1.0 and represent the proportion of the dataset to include in the test split. If int, represents the absolute number of test samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">random_state:int,</span> <span class="pre">RandomState</span> <span class="pre">instance</span> <span class="pre">or</span> <span class="pre">None,</span> <span class="pre">default=0</span></span></dt>
+<dd><p>Controls the shuffling applied to the data before applying the split. Pass an int for reproducible output across multiple function calls.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.metricsPlot.partial_dependence">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.metricsPlot.</span></span><span class="sig-name descname"><span class="pre">partial_dependence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subsample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.metricsPlot.partial_dependence" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:{numpy</span> <span class="pre">array</span> <span class="pre">or</span> <span class="pre">dataframe}</span> <span class="pre">of</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Features is used to generate a grid of values for the target features (where the partial dependence will be evaluated).</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array</span> <span class="pre">of</span> <span class="pre">shape</span> <span class="pre">(n_samples,)</span></span></dt>
+<dd><p>True binary labels used to fit classifier. The value of labels should be in {-1, 1} or {0, 1}.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">feature_names:array-like</span> <span class="pre">of</span> <span class="pre">shape</span> <span class="pre">(n_features,)</span></span></dt>
+<dd><p>Name of each feature; feature_names[i] holds the name of the feature with index i.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clf:sklearn</span> <span class="pre">classifier</span></span></dt>
+<dd><p>A fitted estimator object implementing predict, predict_proba, or decision_function. Multioutput-multiclass classifiers are <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">supported</span></code>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">image_path:str,</span> <span class="pre">default=''</span></span></dt>
+<dd><p>The path used to store the final image file.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">subsample:float,</span> <span class="pre">int</span> <span class="pre">or</span> <span class="pre">None,</span> <span class="pre">default=50</span></span></dt>
+<dd><p>Sampling for ICE curves. If <code class="docutils literal notranslate"><span class="pre">float</span></code>, should be between 0.0 and 1.0 and represent the proportion of the dataset to be used to plot ICE curves. If <code class="docutils literal notranslate"><span class="pre">int</span></code>, represents the absolute number samples to use.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">n_jobs:int,</span> <span class="pre">default=3</span></span></dt>
+<dd><p>The number of CPUs to use to compute the partial dependences.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">random_state:int,</span> <span class="pre">RandomState</span> <span class="pre">instance</span> <span class="pre">or</span> <span class="pre">None,</span> <span class="pre">default=0</span></span></dt>
+<dd><p>Controls the randomness of the selected samples when subsamples is not <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">grid_resolution:int,</span> <span class="pre">default=20</span></span></dt>
+<dd><p>The number of equally spaced points on the axes of the plots, for each target feature.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
