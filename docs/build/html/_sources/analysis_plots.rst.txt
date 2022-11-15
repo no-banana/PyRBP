@@ -98,6 +98,8 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The number of equally spaced points on the axes of the plots, for each target feature.
 
+
+
 .. py:function::RBP_package.metricsPlot.confusion_matirx_deeplearning(test_labels, pred_labels, image_path='')
 
     :Parameters:
