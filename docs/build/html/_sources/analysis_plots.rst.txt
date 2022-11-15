@@ -100,7 +100,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.confusion_matirx_deeplearning(test_labels, pred_labels, image_path='')
+.. py:function:: RBP_package.metricsPlot.confusion_matirx_deeplearning(test_labels, pred_labels, image_path='')
 
     :Parameters:
             .. class:: test_labels:numpy array of shape (n_samples,)
@@ -115,7 +115,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function::RBP_package.metricsPlot.confusion_matrix_machinelearning(clf, features, labels, label_tags, test_size=0.25, normalize=None, random_state=0, image_path='')
+.. py:function:: RBP_package.metricsPlot.confusion_matrix_machinelearning(clf, features, labels, label_tags, test_size=0.25, normalize=None, random_state=0, image_path='')
 
     :Parameters:
             .. class:: clf:sklearn classifier
@@ -150,7 +150,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function::RBP_package.metricsPlot.det_curve_machinelearning(features, labels, clf_list, image_path='', test_size=0.25, random_state=0)
+.. py:function:: RBP_package.metricsPlot.det_curve_machinelearning(features, labels, clf_list, image_path='', test_size=0.25, random_state=0)
 
     :Parameters:
 
@@ -179,7 +179,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     Controls the shuffling applied to the data before applying the split. Pass an int for reproducible output across multiple function calls.
 
 
-.. py:function::RBP_package.metricsPlot.det_curve_deeplearning(label_list, pred_proba_list, name_list, image_path='')
+.. py:function:: RBP_package.metricsPlot.det_curve_deeplearning(label_list, pred_proba_list, name_list, image_path='')
 
     :Parameters:
             .. class:: label_list:list
@@ -200,7 +200,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.precision_recall_curve_machinelearning(features, labels, clf_list, image_path='', test_size=0.25, random_state=0)
+.. py:function:: RBP_package.metricsPlot.precision_recall_curve_machinelearning(features, labels, clf_list, image_path='', test_size=0.25, random_state=0)
 
     :Parameters:
             .. class:: features:numpy array of shape (n_samples, n_features)
@@ -225,7 +225,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.precision_recall_curve_deeplearning(label_list, pred_labels_list, name_list, image_path='')
+.. py:function:: RBP_package.metricsPlot.precision_recall_curve_deeplearning(label_list, pred_labels_list, name_list, image_path='')
 
     :Parameters:
             .. class:: label_list:list
@@ -245,7 +245,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.shap_bar(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
+.. py:function:: RBP_package.metricsPlot.shap_bar(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
 
     :Parameters:
             .. class:: features:numpy array of shape (n_samples, n_features)
@@ -273,7 +273,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.shap_scatter(features, labels, clf, feature_id, sample_size=(0, 100), feature_size=(0, 10), image_path='')
+.. py:function:: RBP_package.metricsPlot.shap_scatter(features, labels, clf, feature_id, sample_size=(0, 100), feature_size=(0, 10), image_path='')
 
     :Parameters:
             .. class:: features:numpy array of shape (n_samples, n_features)
@@ -306,7 +306,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::shap_waterfall(features, labels, clf, feature_id, sample_size=(0, 100), feature_size=(0, 10), image_path='')
+.. py:function:: RBP_package.metricsPlot.shap_waterfall(features, labels, clf, feature_id, sample_size=(0, 100), feature_size=(0, 10), image_path='')
 
     :Parameters:
              .. class:: features:numpy array of shape (n_samples, n_features)
@@ -334,7 +334,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.shap_interaction_scatter(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
+.. py:function:: RBP_package.metricsPlot.shap_interaction_scatter(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
 
     :Parameters:
             .. class:: features:numpy array of shape (n_samples, n_features)
@@ -363,7 +363,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.shap_beeswarm(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
+.. py:function:: RBP_package.metricsPlot.shap_beeswarm(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
 
     :Parameters:
             .. class:: features:numpy array of shape (n_samples, n_features)
@@ -391,7 +391,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.shap_heatmap(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
+.. py:function:: RBP_package.metricsPlot.shap_heatmap(features, labels, clf, sample_size=(0, 100), feature_size=(0, 10), image_path='')
 
     :Parameters:
             .. class:: features:numpy array of shape (n_samples, n_features)
@@ -420,7 +420,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.violinplot(features, x_id, y_id, image_path='')
+.. py:function:: RBP_package.metricsPlot.violinplot(features, x_id, y_id, image_path='')
 
     :Parameters:
         .. class:: features:dataframe of shape (n_samples, n_features)
@@ -440,7 +440,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.boxplot(features, x_id, y_id, image_path='')
+.. py:function:: RBP_package.metricsPlot.boxplot(features, x_id, y_id, image_path='')
 
     :Parameters:
         .. class:: features:dataframe of shape (n_samples, n_features)
@@ -462,7 +462,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.pointplot(features, x_id, y_id, image_path='')
+.. py:function:: RBP_package.metricsPlot.pointplot(features, x_id, y_id, image_path='')
 
     :Parameters:
         .. class:: features:dataframe of shape (n_samples, n_features)
@@ -483,7 +483,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function::RBP_package.metricsPlot.barplot(features, x_id, y_id, image_path='')
+.. py:function:: RBP_package.metricsPlot.barplot(features, x_id, y_id, image_path='')
 
     :Parameters:
         .. class:: features:dataframe of shape (n_samples, n_features)
@@ -503,7 +503,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.sns_heatmap(features, sample_size=(0, 15), feature_size=(0, 15), image_path='')
+.. py:function:: RBP_package.metricsPlot.sns_heatmap(features, sample_size=(0, 15), feature_size=(0, 15), image_path='')
 
     :Parameters:
         .. class:: features:numpy array of shape (n_samples, n_features)
@@ -522,7 +522,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function::RBP_package.metricsPlot.prediction_error(features, labels, classes, test_size, random_state, clf, image_path='')
+.. py:function:: RBP_package.metricsPlot.prediction_error(features, labels, classes, test_size, random_state, clf, image_path='')
 
     :Parameters:
 
@@ -554,7 +554,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function::RBP_package.metricsPlot.descrimination_threshold(features, labels, clf, image_path='')
+.. py:function:: RBP_package.metricsPlot.descrimination_threshold(features, labels, clf, image_path='')
 
     :Parameters:
 
@@ -574,7 +574,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function::RBP_package.metricsPlot.learning_curve(features, labels, folds, clf, image_path='')
+.. py:function:: RBP_package.metricsPlot.learning_curve(features, labels, folds, clf, image_path='')
 
     :Parameters:
 
@@ -599,7 +599,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function::RBP_package.metricsPlot.cross_validation_score(folds, scoring, clf, features, labels, image_path='')
+.. py:function:: RBP_package.metricsPlot.cross_validation_score(folds, scoring, clf, features, labels, image_path='')
 
     :Parameters:
 
