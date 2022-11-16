@@ -44,6 +44,13 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    ./evaluate_classifiers.rst
    ./analysis_plots.rst
 
+.. toctree::
+   :maxdepth: 2
+   :caption: EXAMPLES
+
+   ./basic_usage.rst
+   ./fileOperation_examples.rst
+
 
 Indices and tables
 ==================
