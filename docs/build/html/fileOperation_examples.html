@@ -56,7 +56,11 @@
 <p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basic_usage.html">RBP_package basic usage flow</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">File operation examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">File operation examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#load-the-sequences">Load the sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#load-the-labels">Load the labels</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -85,6 +89,46 @@
              
   <section id="file-operation-examples">
 <h1>File operation examples<a class="headerlink" href="#file-operation-examples" title="Permalink to this heading">¶</a></h1>
+<p>This example shows how to read a dataset using the <code class="docutils literal notranslate"><span class="pre">fileOperation</span></code> module of the <code class="docutils literal notranslate"><span class="pre">RBP_package</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">RBP_package.filesOperation</span> <span class="kn">import</span> <span class="n">read_fasta_file</span><span class="p">,</span> <span class="n">read_label</span>
+</pre></div>
+</div>
+<section id="load-the-sequences">
+<h2>Load the sequences<a class="headerlink" href="#load-the-sequences" title="Permalink to this heading">¶</a></h2>
+<p>Function <code class="docutils literal notranslate"><span class="pre">read_fasta_file</span></code> reads a <code class="docutils literal notranslate"><span class="pre">.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">.fasta</span></code> or <code class="docutils literal notranslate"><span class="pre">.fa</span></code> text file according to the path given in the parameters, and filters or replaces empty lines and ‘T’ characters, finally it returns a numpy array containing all sequences.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span> <span class="c1"># Replace the path to load your own sequences of dataset</span>
+
+<span class="n">sequences</span> <span class="o">=</span> <span class="n">read_fasta_file</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sequences</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sequences</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl>
+<dt>output:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+(34636,)
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="load-the-labels">
+<h2>Load the labels<a class="headerlink" href="#load-the-labels" title="Permalink to this heading">¶</a></h2>
+<p>Function <code class="docutils literal notranslate"><span class="pre">read_label</span></code> reads a text file and returns a numpy array containing labels corresponding to the sequences.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span> <span class="c1"># Replace the path to load your own labels of dataset</span>
+
+<span class="n">label</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">label_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">label</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl>
+<dt>output:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+(34636,)
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
 </section>
 
 
