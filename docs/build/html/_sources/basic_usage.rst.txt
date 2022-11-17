@@ -53,6 +53,8 @@ We take the cife method as example.
     refined_biological_features = cife(biological_features, label, num_features=10)  # refine the biologcial_feature using cife feature selection method
     print(refined_biological_features.shape)
 
+The output of the above code is as follows:
+
     ::
 
         (34636, 400)
