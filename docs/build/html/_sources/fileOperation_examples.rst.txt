@@ -1,7 +1,7 @@
 File operation examples
 ===========================
 
-This example shows how to read a dataset using the ``fileOperation`` module of the ``RBP_package``
+This page shows how to read a dataset using the ``fileOperation`` module of the ``RBP_package``
 
 .. code-block:: py
 
