@@ -114,8 +114,12 @@ If the basic_path you specified already exists, then you will first get the foll
 
 output:
 
+    ::
+
+        (17318, 101, 5)
 
 
+.. note:: It takes a long time to extract the secondary structure information, please be patient. 
 
 
 .. _figshare: https://figshare.com/articles/software/LM_for_RBP_package/21383187
