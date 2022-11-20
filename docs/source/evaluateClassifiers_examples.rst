@@ -1,4 +1,4 @@
-Train a simple classifier using the generated features
+Evaluating classifiers examples
 ==================================================================
 
 In the RBP_package, we integrate several machine learning classifiers from sklearn and implement several classical deep learning models for users to perform performance tests, for which we provide two easy-to-use functions for machine learning classifiers and deep learning models respectively.
