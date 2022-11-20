@@ -51,6 +51,7 @@ RBP_package is a Python toolbox for quick generation, condensation, evaluation, 
    ./basic_usage.rst
    ./fileOperation_examples.rst
    ./featureGeneration_examples.rst
+   ./featureSelection_examples.rst
 
 
 Indices and tables
