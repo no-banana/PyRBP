@@ -115,7 +115,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function:: RBP_package.metricsPlot.confusion_matrix_machinelearning(clf, features, labels, label_tags, test_size=0.25, normalize=None, random_state=0, image_path='')
+.. py:function:: RBP_package.metricsPlot.confusion_matrix_machinelearning(clf, features, labels, label_tags=None, test_size=0.25, normalize=None, random_state=0, image_path='')
 
     :Parameters:
             .. class:: clf:sklearn classifier
@@ -130,7 +130,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     Labels to index the matrix.
 
-            .. class:: label_tags:list of names for different classes
+            .. class:: label_tags:list of names for different classes, default=None
 
                     Target names used for plotting. By default, ``labels`` will be used.
 

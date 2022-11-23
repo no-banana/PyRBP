@@ -82,7 +82,7 @@ Deep learning models
     name_list = ['CNN', 'RNN']
 
     # Divide the features into training and test sets in the ratio of 3:1
-    X_train, test_X, y_train, test_y = train_test_split(dynamic_semantic_information, label, test_size=0.25, random_state=6)
+    X_train, test_X, y_train, test_y = train_test_split(dynamic_semantic_information, labels_2D, test_size=0.25, random_state=6)
 
     # Take 10% from the training set as the validation set
     train_X, val_X, train_y, val_y = train_test_split(X_train, y_train, test_size=0.1, random_state=6)
@@ -132,12 +132,59 @@ After the function finishes running, it will save a ``roc_curve.png`` file in th
 
 
 
+Plot confusion matrix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This example shows how to use the ``RBP_package.metricsPlot`` module to plot the confusion matrix.
 
+Deep learning models
+------------------------
 
+.. code-block:: py
 
+    # Divide the features into training and test sets in the ratio of 3:1
+    X_train, test_X, y_train, test_y = train_test_split(dynamic_semantic_information, label, test_size=0.25, random_state=6)
 
+    # Take 10% from the training set as the validation set
+    train_X, val_X, train_y, val_y = train_test_split(X_train, y_train, test_size=0.1, random_state=6)
 
+    # train CNN model for example
+    CNN_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    CNN_model.fit(x=train_X, y=train_y, epochs=30, batch_size=64, verbose=0, shuffle=True, callbacks=callbacks,
+                          validation_data=(val_X, val_y))
+    pre_proba_CNN = CNN_model.predict(test_X)
+    pred_labels = np.argmax(pre_proba_CNN)
+    test_labels = test_y[:, 1]
 
+    # plot the confusion matrix
+    confusion_matirx_deeplearning(test_labels=test_labels, pred_labels=pred_labels, image_path='./')
 
+After the function finishes running, it will save a ``confusion_matrix.png`` file in the path specified by ``image_path``, as follows:
+
+.. image:: ./images/confusion_matrix.png
+    :align: center
+    :alt: confusion_matrix_deeplearning
+
+Machine learning classifiers
+--------------------------------
+
+.. code-block:: py
+    
+    # select the LogisticRegression for example
+    clf = ML_Classifiers[0]
+
+    # the test set ratio is set to 0.25 for plotting confusion matrix
+    confusion_matrix_machinelearning(clf, biologcial_feature, label, test_size=0.25, normalize=None, random_state=6, image_path='./')
+
+After the function finishes running, it will save a ``without_normalization_confusionMatrix.png`` file in the path specified by ``image_path``, as follows:
+
+.. image:: ./images/without_normalization_confusionMatrix.png
+    :align: center
+    :alt: confusion_matrix_ML_without_normalization
+
+When ``normalize`` is set to 'true', 'pred' or 'all', the resulting image is as follows (file name is ``normalization_confusionMatrix.png``):
+
+.. image:: ./images/normalization_confusionMatrix.png
+    :align: center
+    :alt: confusion_matrix_ML_normalization
 
