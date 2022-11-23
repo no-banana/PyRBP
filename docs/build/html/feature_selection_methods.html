@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBP_package.featureSelection &mdash; RBP_package_test 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="RBP_package.evaluateClassifiers" href="evaluate_classifiers.html" />
+    <link rel="prev" title="RBP_package.Features" href="RNA_features.html" />
+    <link href="_static/default.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RBP_package_test
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="file_operation.html">RBP_package.filesOperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">RBP_package.Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RBP_package.featureSelection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#information-theoretical-based">Information theoretical based</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cife"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cife()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cmim"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cmim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.disr"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.disr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.icap"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.icap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.jmi"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.jmi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mifs"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mifs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mim"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mrmr"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mrmr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#similarity-based">Similarity based</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.fisherScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.fisherScore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.relief_f"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.relief_f()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.traceRatio"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.traceRatio()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sparse-learning-based">Sparse learning based</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.llL21"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.llL21()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.lsL21"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.lsL21()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#statistical-based">Statistical based</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cfs"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cfs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.chiSquare"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.chiSquare()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.fScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.fScore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.giniIndex"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.giniIndex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.tScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.tScore()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">RBP_package.evaluateClassifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">RBP_package.metricsPlot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">RBP_package basic usage flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileOperation_examples.html">File operation examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="featureGeneration_examples.html">Feature generation examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="featureSelection_examples.html">Feature selection examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluateClassifiers_examples.html">Evaluating classifiers examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotAnalysis_examples.html">Performance and data visualization examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HISTORY</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release_history.html">Release History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RBP_package_test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>RBP_package.featureSelection</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/feature_selection_methods.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rbp-package-featureselection">
+<h1>RBP_package.featureSelection<a class="headerlink" href="#rbp-package-featureselection" title="Permalink to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">RBP_package</span></code> integrates feature selection methods based on four different evaluation approaches (information theoretical based, similarity based, sparse learning based and statistical based).</p>
+<section id="information-theoretical-based">
+<h2>Information theoretical based<a class="headerlink" href="#information-theoretical-based" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.cife">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cife</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cife" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Conditional Infomax Feature Extraction <a class="reference internal" href="#cife" id="id1"><span>[CIFE]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="cife"><span class="brackets"><a class="fn-backref" href="#id1">CIFE</a></span></dt>
+<dd><p>Dahua Lin and Xiaoou Tang. 2006. Conditional infomax learning: An integrated framework for feature extraction and fusion. In ECCV. 68–82.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.cmim">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cmim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cmim" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Conditional Mutual Information Maximization <a class="reference internal" href="#cmim" id="id2"><span>[CMIM]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="cmim"><span class="brackets"><a class="fn-backref" href="#id2">CMIM</a></span></dt>
+<dd><p>François Fleuret. 2004. Fast binary feature selection with conditional mutual information. JMLR 5 (2004), 1531–1555.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.disr">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">disr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.disr" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Double Input Symmetrical Relevance <a class="reference internal" href="#disr" id="id3"><span>[DISR]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="disr"><span class="brackets"><a class="fn-backref" href="#id3">DISR</a></span></dt>
+<dd><p>Patrick Emmanuel Meyer, Colas Schretter, and Gianluca Bontempi. 2008. Information-theoretic feature selection in microarray data using variable complementarity. IEEE J. Select. Top. Sign. Process. 2, 3 (2008), 261–274.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.icap">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">icap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.icap" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses mutual information <a class="reference internal" href="#icap" id="id4"><span>[ICAP]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="icap"><span class="brackets"><a class="fn-backref" href="#id4">ICAP</a></span></dt>
+<dd><p>Ali El Akadi, Abdeljalil El Ouardighi, and Driss Aboutajdine. 2008. A powerful feature selection approach based on mutual information. Int. J. Comput. Sci. Netw. Secur. 8, 4 (2008), 116.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.jmi">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">jmi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.jmi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Joint Mutual Information <a class="reference internal" href="#jmi" id="id5"><span>[JMI]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="jmi"><span class="brackets"><a class="fn-backref" href="#id5">JMI</a></span></dt>
+<dd><p>Patrick Emmanuel Meyer, Colas Schretter, and Gianluca Bontempi. 2008. Information-theoretic feature selection in microarray data using variable complementarity. IEEE J. Select. Top. Sign. Process. 2, 3 (2008), 261–274.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.mifs">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mifs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.mifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Mutual Information Feature Selection <a class="reference internal" href="#mifs" id="id6"><span>[MIFS]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="mifs"><span class="brackets"><a class="fn-backref" href="#id6">MIFS</a></span></dt>
+<dd><p>Roberto Battiti. 1994. Using mutual information for selecting features in supervised neural net learning. IEEE Trans. Neural Network. 5, 4 (1994), 537–550.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.mim">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.mim" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Mutual Information Maximization <a class="reference internal" href="#mim" id="id7"><span>[MIM]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="mim"><span class="brackets"><a class="fn-backref" href="#id7">MIM</a></span></dt>
+<dd><p>David D. Lewis. 1992. Feature selection and feature extraction for text categorization. In Proceedings of the Workshop on Speech and Natural Language. 212–217.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.mrmr">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mrmr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.mrmr" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Minimum Redundancy Maximum Relevance <a class="reference internal" href="#mrmr" id="id8"><span>[MRMR]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="mrmr"><span class="brackets"><a class="fn-backref" href="#id8">MRMR</a></span></dt>
+<dd><p>Hanchuan Peng, Fuhui Long, and Chris Ding. 2005. Feature selection based on mutual information criteria of maxdependency, max-relevance, and min-redundancy. IEEE Trans. Pattern Anal. Mach. Intell. 27, 8 (2005), 1226–1238.</p>
+</dd>
+</dl>
+</section>
+<section id="similarity-based">
+<h2>Similarity based<a class="headerlink" href="#similarity-based" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.fisherScore">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fisherScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.fisherScore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses  Fisher Score <a class="reference internal" href="#fisherscore" id="id9"><span>[fisherscore]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="fisherscore"><span class="brackets"><a class="fn-backref" href="#id9">fisherscore</a></span></dt>
+<dd><p>Richard O. Duda, Peter E. Hart, and David G. Stork. 2012. Pattern Classification. John Wiley &amp; Sons.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.relief_f">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">relief_f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.relief_f" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses ReliefF <a class="reference internal" href="#relieff" id="id10"><span>[reliefF]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="relieff"><span class="brackets"><a class="fn-backref" href="#id10">reliefF</a></span></dt>
+<dd><p>Marko Robnik-Šikonja and Igor Kononenko. 2003. Theoretical and empirical analysis of relieff and rrelieff. Mach. Learn. 53, 1-2 (2003), 23–69.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.traceRatio">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">traceRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.traceRatio" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Trace Ratio Criterion <a class="reference internal" href="#traceratio" id="id11"><span>[traceratio]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="traceratio"><span class="brackets"><a class="fn-backref" href="#id11">traceratio</a></span></dt>
+<dd><p>Feiping Nie, Shiming Xiang, Yangqing Jia, Changshui Zhang, and Shuicheng Yan. 2008. Trace ratio criterion for feature selection. In AAAI. 671–676.</p>
+</dd>
+</dl>
+</section>
+<section id="sparse-learning-based">
+<h2>Sparse learning based<a class="headerlink" href="#sparse-learning-based" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.llL21">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">llL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.llL21" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses l2,1-norm regularization-based feature selection method <a class="reference internal" href="#lll21" id="id12"><span>[lll21]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="lll21"><span class="brackets"><a class="fn-backref" href="#id12">lll21</a></span></dt>
+<dd><p>Jiliang Tang, Salem Alelyani, and Huan Liu. 2014. Feature selection for classification: A review. Data Classification: Algorithms and Applications (2014), 37.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.lsL21">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">lsL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.lsL21" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses l2,1-norm regularization-based feature selection method <a class="reference internal" href="#lsl21" id="id13"><span>[lsl21]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="lsl21"><span class="brackets"><a class="fn-backref" href="#id13">lsl21</a></span></dt>
+<dd><p>Jiliang Tang, Salem Alelyani, and Huan Liu. 2014. Feature selection for classification: A review. Data Classification: Algorithms and Applications (2014), 37.</p>
+</dd>
+</dl>
+</section>
+<section id="statistical-based">
+<h2>Statistical based<a class="headerlink" href="#statistical-based" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.cfs">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cfs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses correlation-based filter approach <a class="reference internal" href="#cfs" id="id14"><span>[CFS]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="cfs"><span class="brackets"><a class="fn-backref" href="#id14">CFS</a></span></dt>
+<dd><p>Mark A. Hall and Lloyd A. Smith. 1999. Feature selection for machine learning: Comparing a correlation-based filter approach to the wrapper. In FLAIRS. 235–239.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.chiSquare">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">chiSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.chiSquare" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Chi-Square Score <a class="reference internal" href="#chisquare" id="id15"><span>[chisquare]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="chisquare"><span class="brackets"><a class="fn-backref" href="#id15">chisquare</a></span></dt>
+<dd><p>Huan Liu and Rudy Setiono. 1995. Chi2: Feature selection and discretization of numeric attributes. In ICTAI. 388–391.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.fScore">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.fScore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses F-score <a class="reference internal" href="#fscore" id="id16"><span>[fscore]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="fscore"><span class="brackets"><a class="fn-backref" href="#id16">fscore</a></span></dt>
+<dd><p>Wright, Sewall. “The Interpretation of Population Structure by F-Statistics with Special Regard to Systems of Mating.” Evolution, vol. 19, no. 3, 1965, pp. 395–420.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.giniIndex">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">giniIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.giniIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses Gini Index <a class="reference internal" href="#giniindex" id="id17"><span>[giniindex]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="giniindex"><span class="brackets"><a class="fn-backref" href="#id17">giniindex</a></span></dt>
+<dd><ol class="upperalpha simple" start="3">
+<li><ol class="upperalpha simple" start="23">
+<li><p>Gini. 1912. Variability and mutability, contribution to the study of statistical distribution and relaitons. Studi Economico-Giuricici Della R (1912).</p></li>
+</ol>
+</li>
+</ol>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="RBP_package.featureSelection.tScore">
+<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">tScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.tScore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function uses T-score <a class="reference internal" href="#tscore" id="id18"><span>[tscore]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">features:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">n_features)</span></span></dt>
+<dd><p>Sample feature matrix to be processed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">labels:numpy</span> <span class="pre">array,</span> <span class="pre">shape</span> <span class="pre">(n_samples,</span> <span class="pre">)</span></span></dt>
+<dd><p>Class labels according to the input samples.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">num_features:int,</span> <span class="pre">default=10</span></span></dt>
+<dd><p>Number of selected features.</p>
+</dd></dl>
+
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="citation">
+<dt class="label" id="tscore"><span class="brackets"><a class="fn-backref" href="#id18">tscore</a></span></dt>
+<dd><p>John C. Davis and Robert J. Sampson. 1986. Statistics and Data Analysis in Geology. Vol. 646. Wiley. New York.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="RNA_features.html" class="btn btn-neutral float-left" title="RBP_package.Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="evaluate_classifiers.html" class="btn btn-neutral float-right" title="RBP_package.evaluateClassifiers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Yansong Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
