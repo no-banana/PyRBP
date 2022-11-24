@@ -74,6 +74,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">Machine learning classifiers</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#plot-det-curve">Plot det curve</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Deep learning models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Machine learning classifiers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#plot-precision-recall-curve">Plot precision recall curve</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Deep learning models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-learning-models">Machine learning models</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -111,10 +121,7 @@
 <p>A variety of visualization functions are integrated in RBP_package, which can perform certain correlation analysis on feature data and also visualize the obtained performance index data for plotting.</p>
 <section id="importing-related-modules">
 <h2>Importing related modules<a class="headerlink" href="#importing-related-modules" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
-
-<span class="c1"># import file operation module</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># import file operation module</span>
 <span class="kn">from</span> <span class="nn">RBP_package.filesOperation</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># import the visualize module in RBP_package</span>
@@ -133,6 +140,9 @@
 
 <span class="c1"># import train_test_split module to divide features into training set and test set.</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.utils</span> <span class="kn">import</span> <span class="n">to_categorical</span>
 </pre></div>
 </div>
 </section>
@@ -212,7 +222,7 @@
 <h3>Machine learning classifiers<a class="headerlink" href="#machine-learning-classifiers" title="Permalink to this heading">¶</a></h3>
 <p>In the machine learning plotting process, we don’t need to train the classifiers manually, we just need to pass the feature matrix, labels and classifiers into the function.</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the previously created set of classifiers and the biological feature matrix, the test set ratio is set to 0.25 for roc curve plotting.</span>
-<span class="n">roc_curve_machinelearning</span><span class="p">(</span><span class="n">biologcial_feature</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ML_Classifiers</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">roc_curve_machinelearning</span><span class="p">(</span><span class="n">biological_features</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ML_Classifiers</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After the function finishes running, it will save a <code class="docutils literal notranslate"><span class="pre">roc_curve.png</span></code> file in the path specified by <code class="docutils literal notranslate"><span class="pre">image_path</span></code>, as follows:</p>
@@ -235,7 +245,7 @@
 <span class="n">CNN_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">train_X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
                       <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_X</span><span class="p">,</span> <span class="n">val_y</span><span class="p">))</span>
 <span class="n">pre_proba_CNN</span> <span class="o">=</span> <span class="n">CNN_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)</span>
-<span class="n">pred_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pre_proba_CNN</span><span class="p">)</span>
+<span class="n">pred_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pre_proba_CNN</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">test_labels</span> <span class="o">=</span> <span class="n">test_y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># plot the confusion matrix</span>
@@ -258,6 +268,100 @@
 <img alt="confusion_matrix_ML_without_normalization" class="align-center" src="_images/without_normalization_confusionMatrix.png" />
 <p>When <code class="docutils literal notranslate"><span class="pre">normalize</span></code> is set to ‘true’, ‘pred’ or ‘all’, the resulting image is as follows (file name is <code class="docutils literal notranslate"><span class="pre">normalization_confusionMatrix.png</span></code>):</p>
 <img alt="confusion_matrix_ML_normalization" class="align-center" src="_images/normalization_confusionMatrix.png" />
+</section>
+</section>
+<section id="plot-det-curve">
+<h2>Plot det curve<a class="headerlink" href="#plot-det-curve" title="Permalink to this heading">¶</a></h2>
+<p>This example shows how to use the <code class="docutils literal notranslate"><span class="pre">RBP_package.metricsPlot</span></code> module to plot the det curve.</p>
+<section id="id3">
+<h3>Deep learning models<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">label_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pred_proba_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CNN&#39;</span><span class="p">,</span> <span class="s1">&#39;RNN&#39;</span><span class="p">]</span>
+
+<span class="c1"># Divide the features into training and test sets in the ratio of 3:1</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">test_X</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">test_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dynamic_semantic_information</span><span class="p">,</span> <span class="n">labels_2D</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Take 10% from the training set as the validation set</span>
+<span class="n">train_X</span><span class="p">,</span> <span class="n">val_X</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">val_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># train CNN and RNN models</span>
+<span class="n">CNN_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">CNN_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">train_X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_X</span><span class="p">,</span> <span class="n">val_y</span><span class="p">))</span>
+<span class="n">pre_proba_CNN</span> <span class="o">=</span> <span class="n">CNN_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">test_y1</span> <span class="o">=</span> <span class="n">test_y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">label_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_y1</span><span class="p">)</span>
+<span class="n">pred_proba_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pre_proba_CNN</span><span class="p">)</span>
+
+<span class="n">RNN_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">RNN_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">train_X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_X</span><span class="p">,</span> <span class="n">val_y</span><span class="p">))</span>
+<span class="n">pre_proba_RNN</span> <span class="o">=</span> <span class="n">RNN_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">test_y2</span> <span class="o">=</span> <span class="n">test_y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">label_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_y2</span><span class="p">)</span>
+<span class="n">pred_proba_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pre_proba_RNN</span><span class="p">)</span>
+
+<span class="c1"># plot the det curve</span>
+<span class="n">det_curve_deeplearning</span><span class="p">(</span><span class="n">label_list</span><span class="p">,</span> <span class="n">pred_proba_list</span><span class="p">,</span> <span class="n">name_list</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the function finishes running, it will save a <code class="docutils literal notranslate"><span class="pre">det_curve.png</span></code> file in the path specified by <code class="docutils literal notranslate"><span class="pre">image_path</span></code>, as follows:</p>
+<img alt="det_curve_deeplearning" class="align-center" src="_images/det_curve_deeplearning.png" />
+</section>
+<section id="id4">
+<h3>Machine learning classifiers<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>In the machine learning plotting process, we don’t need to train the classifiers manually, we just need to pass the feature matrix, labels and classifiers into the function.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">det_curve_machinelearning</span><span class="p">(</span><span class="n">biological_features</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ML_Classifiers</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the function finishes running, it will save a <code class="docutils literal notranslate"><span class="pre">det_curve.png</span></code> file in the path specified by <code class="docutils literal notranslate"><span class="pre">image_path</span></code>, as follows:</p>
+</section>
+</section>
+<section id="plot-precision-recall-curve">
+<h2>Plot precision recall curve<a class="headerlink" href="#plot-precision-recall-curve" title="Permalink to this heading">¶</a></h2>
+<p>This example shows how to use the <code class="docutils literal notranslate"><span class="pre">RBP_package.metricsPlot</span></code> module to plot the precision recall curve.</p>
+<section id="id5">
+<h3>Deep learning models<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">label_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pred_label_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CNN&#39;</span><span class="p">,</span> <span class="s1">&#39;RNN&#39;</span><span class="p">]</span>
+
+<span class="c1"># Divide the features into training and test sets in the ratio of 3:1</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">test_X</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">test_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dynamic_semantic_information</span><span class="p">,</span> <span class="n">labels_2D</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Take 10% from the training set as the validation set</span>
+<span class="n">train_X</span><span class="p">,</span> <span class="n">val_X</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">val_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># train CNN and RNN models</span>
+<span class="n">CNN_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">CNN_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">train_X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_X</span><span class="p">,</span> <span class="n">val_y</span><span class="p">))</span>
+<span class="n">pre_proba_CNN</span> <span class="o">=</span> <span class="n">CNN_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)</span>
+<span class="n">test_y1</span> <span class="o">=</span> <span class="n">test_y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">label_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_y1</span><span class="p">)</span>
+<span class="n">pred_label_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pre_proba_CNN</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">RNN_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">RNN_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">train_X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">,</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_X</span><span class="p">,</span> <span class="n">val_y</span><span class="p">))</span>
+<span class="n">pre_proba_RNN</span> <span class="o">=</span> <span class="n">RNN_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)</span>
+<span class="n">test_y2</span> <span class="o">=</span> <span class="n">test_y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">label_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_y2</span><span class="p">)</span>
+<span class="n">pred_label_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pre_proba_RNN</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># plot the precision recall curve</span>
+<span class="n">precision_recall_curve_deeplearning</span><span class="p">(</span><span class="n">label_list</span><span class="p">,</span> <span class="n">pred_label_list</span><span class="p">,</span> <span class="n">name_list</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the function finishes running, it will save a <code class="docutils literal notranslate"><span class="pre">precision_recall_curve.png</span></code> file in the path specified by <code class="docutils literal notranslate"><span class="pre">image_path</span></code>, as follows:</p>
+</section>
+<section id="machine-learning-models">
+<h3>Machine learning models<a class="headerlink" href="#machine-learning-models" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">precision_recall_curve_machinelearning</span><span class="p">(</span><span class="n">biological_features</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ML_Classifiers</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the function finishes running, it will save a <code class="docutils literal notranslate"><span class="pre">precision_recall_curve.png</span></code> file in the path specified by <code class="docutils literal notranslate"><span class="pre">image_path</span></code>, as follows:</p>
 </section>
 </section>
 </section>
