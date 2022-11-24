@@ -244,7 +244,7 @@ In the machine learning plotting process, we don't need to train the classifiers
 
 After the function finishes running, it will save a ``det_curve.png`` file in the path specified by ``image_path``, as follows:
 
-.. images:: ./images/det_curve_machinelearning.png
+.. image:: ./images/det_curve_machinelearning.png
     :align: center
     :alt: det_curve_machinelearning
 
@@ -291,7 +291,7 @@ Deep learning models
 
 After the function finishes running, it will save a ``precision_recall_curve.png`` file in the path specified by ``image_path``, as follows:
 
-.. images:: ./images/precision_recall_curve_deeplearning.png
+.. image:: ./images/precision_recall_curve_deeplearning.png
     :align: center
     :alt: precision_recall_curve_deeplearning
 
@@ -304,7 +304,7 @@ Machine learning models
 
 After the function finishes running, it will save a ``precision_recall_curve.png`` file in the path specified by ``image_path``, as follows:
 
-.. images:: ./images/precision_recall_curve_machinelearning.png
+.. image:: ./images/precision_recall_curve_machinelearning.png
     :align: center
     :alt: precision_recall_curve_machinelearning
 
