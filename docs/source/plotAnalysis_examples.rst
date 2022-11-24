@@ -8,9 +8,6 @@ Importing related modules
 
 .. code-block:: py
 
-    from tensorflow.keras.callbacks import EarlyStopping
-    from tensorflow.keras.utils import to_categorical
-
     # import file operation module
     from RBP_package.filesOperation import *
 
@@ -30,7 +27,9 @@ Importing related modules
 
     # import train_test_split module to divide features into training set and test set.
     from sklearn.model_selection import train_test_split
-
+    
+    from tensorflow.keras.callbacks import EarlyStopping
+    from tensorflow.keras.utils import to_categorical
 
 Data preparation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,7 +121,7 @@ In the machine learning plotting process, we don't need to train the classifiers
 .. code-block:: py
 
     # Using the previously created set of classifiers and the biological feature matrix, the test set ratio is set to 0.25 for roc curve plotting.
-    roc_curve_machinelearning(biologcial_feature, label, ML_Classifiers, image_path='./', test_size=0.25, random_state=6)
+    roc_curve_machinelearning(biological_features, label, ML_Classifiers, image_path='./', test_size=0.25, random_state=6)
 
 After the function finishes running, it will save a ``roc_curve.png`` file in the path specified by ``image_path``, as follows:
 
@@ -153,7 +152,7 @@ Deep learning models
     CNN_model.fit(x=train_X, y=train_y, epochs=30, batch_size=64, verbose=0, shuffle=True, callbacks=callbacks,
                           validation_data=(val_X, val_y))
     pre_proba_CNN = CNN_model.predict(test_X)
-    pred_labels = np.argmax(pre_proba_CNN)
+    pred_labels = np.argmax(pre_proba_CNN, axis=1)
     test_labels = test_y[:, 1]
 
     # plot the confusion matrix
@@ -187,4 +186,125 @@ When ``normalize`` is set to 'true', 'pred' or 'all', the resulting image is as 
 .. image:: ./images/normalization_confusionMatrix.png
     :align: center
     :alt: confusion_matrix_ML_normalization
+
+Plot det curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example shows how to use the ``RBP_package.metricsPlot`` module to plot the det curve.
+
+Deep learning models
+------------------------
+
+.. code-block:: py
+
+    label_list = []
+    pred_proba_list = []
+    name_list = ['CNN', 'RNN']
+
+    # Divide the features into training and test sets in the ratio of 3:1
+    X_train, test_X, y_train, test_y = train_test_split(dynamic_semantic_information, labels_2D, test_size=0.25, random_state=6)
+
+    # Take 10% from the training set as the validation set
+    train_X, val_X, train_y, val_y = train_test_split(X_train, y_train, test_size=0.1, random_state=6)
+
+    # train CNN and RNN models
+    CNN_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    CNN_model.fit(x=train_X, y=train_y, epochs=30, batch_size=64, verbose=0, shuffle=True, callbacks=callbacks,
+                          validation_data=(val_X, val_y))
+    pre_proba_CNN = CNN_model.predict(test_X)[:, 1]
+    test_y1 = test_y[:, 1]
+    label_list.append(test_y1)
+    pred_proba_list.append(pre_proba_CNN)
+
+    RNN_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    RNN_model.fit(x=train_X, y=train_y, epochs=30, batch_size=64, verbose=0, shuffle=True, callbacks=callbacks,
+                          validation_data=(val_X, val_y))
+    pre_proba_RNN = RNN_model.predict(test_X)[:, 1]
+    test_y2 = test_y[:, 1]
+    label_list.append(test_y2)
+    pred_proba_list.append(pre_proba_RNN)
+
+    # plot the det curve
+    det_curve_deeplearning(label_list, pred_proba_list, name_list, image_path='./')
+
+After the function finishes running, it will save a ``det_curve.png`` file in the path specified by ``image_path``, as follows:
+
+.. image:: ./images/det_curve_deeplearning.png
+    :align: center
+    :alt: det_curve_deeplearning
+
+Machine learning classifiers
+-------------------------------
+
+In the machine learning plotting process, we don't need to train the classifiers manually, we just need to pass the feature matrix, labels and classifiers into the function.
+
+.. code-block:: py
+
+    det_curve_machinelearning(biological_features, label, ML_Classifiers, image_path='./', test_size=0.25, random_state=6)
+
+After the function finishes running, it will save a ``det_curve.png`` file in the path specified by ``image_path``, as follows:
+
+.. images:: ./images/det_curve_machinelearning.png
+    :align: center
+    :alt: det_curve_machinelearning
+
+
+Plot precision recall curve
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example shows how to use the ``RBP_package.metricsPlot`` module to plot the precision recall curve.
+
+Deep learning models
+------------------------
+
+.. code-block:: py
+
+    label_list = []
+    pred_label_list = []
+    name_list = ['CNN', 'RNN']
+
+    # Divide the features into training and test sets in the ratio of 3:1
+    X_train, test_X, y_train, test_y = train_test_split(dynamic_semantic_information, labels_2D, test_size=0.25, random_state=6)
+
+    # Take 10% from the training set as the validation set
+    train_X, val_X, train_y, val_y = train_test_split(X_train, y_train, test_size=0.1, random_state=6)
+
+    # train CNN and RNN models
+    CNN_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    CNN_model.fit(x=train_X, y=train_y, epochs=30, batch_size=64, verbose=0, shuffle=True, callbacks=callbacks,
+                          validation_data=(val_X, val_y))
+    pre_proba_CNN = CNN_model.predict(test_X)
+    test_y1 = test_y[:, 1]
+    label_list.append(test_y1)
+    pred_label_list.append(np.argmax(pre_proba_CNN, axis=1))
+
+    RNN_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    RNN_model.fit(x=train_X, y=train_y, epochs=30, batch_size=64, verbose=0, shuffle=True, callbacks=callbacks,
+                          validation_data=(val_X, val_y))
+    pre_proba_RNN = RNN_model.predict(test_X)
+    test_y2 = test_y[:, 1]
+    label_list.append(test_y2)
+    pred_label_list.append(np.argmax(pre_proba_RNN, axis=1))
+
+    # plot the precision recall curve
+    precision_recall_curve_deeplearning(label_list, pred_label_list, name_list, image_path='./')
+
+After the function finishes running, it will save a ``precision_recall_curve.png`` file in the path specified by ``image_path``, as follows:
+
+.. images:: ./images/precision_recall_curve_deeplearning.png
+    :align: center
+    :alt: precision_recall_curve_deeplearning
+
+Machine learning models
+--------------------------
+
+.. code-block:: py
+
+    precision_recall_curve_machinelearning(biological_features, label, ML_Classifiers, image_path='./', test_size=0.25, random_state=6)
+
+After the function finishes running, it will save a ``precision_recall_curve.png`` file in the path specified by ``image_path``, as follows:
+
+.. images:: ./images/precision_recall_curve_machinelearning.png
+    :align: center
+    :alt: precision_recall_curve_machinelearning
 
