@@ -59,7 +59,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
 
 
-.. py:function:: RBP_package.metricsPlot.partial_dependence(features, labels, feature_names, clf, image_path='', subsample=50, n_jobs=3, random_state=0, grid_resolution=20)
+.. py:function:: RBP_package.metricsPlot.partial_dependence(features, labels, clf, feature_names, image_path='', subsample=50, n_jobs=3, random_state=0, grid_resolution=20)
 
     :Parameters:
             .. class:: features:{numpy array or dataframe} of shape (n_samples, n_features)
@@ -522,7 +522,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function:: RBP_package.metricsPlot.prediction_error(features, labels, classes, test_size, random_state, clf, image_path='')
+.. py:function:: RBP_package.metricsPlot.prediction_error(features, labels, classes, clf, test_size=0.25, random_state=0, image_path='')
 
     :Parameters:
 
@@ -574,7 +574,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
 
                     The path used to store the final image file.
 
-.. py:function:: RBP_package.metricsPlot.learning_curve(features, labels, folds, clf, image_path='')
+.. py:function:: RBP_package.metricsPlot.learning_curve(features, labels, clf, folds=5, image_path='')
 
     :Parameters:
 
@@ -599,7 +599,7 @@ Many visualization functions are integrated in RBP_package for plotting differen
                     The path used to store the final image file.
 
 
-.. py:function:: RBP_package.metricsPlot.cross_validation_score(folds, scoring, clf, features, labels, image_path='')
+.. py:function:: RBP_package.metricsPlot.cross_validation_score(clf, features, labels, folds=5, scoring=None, image_path='')
 
     :Parameters:
 
