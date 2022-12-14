@@ -1,7 +1,7 @@
-RBP_package.filesOperation
+PyRBP.filesOperation
 ===================================================
 
-.. py:function:: RBP_package.filesOperation.read_fasta_file(fasta_file='')
+.. py:function:: PyRBP.filesOperation.read_fasta_file(fasta_file='')
 
     This function is used to read a sequence file in `fasta` format in the following form.
     ::
@@ -21,7 +21,7 @@ RBP_package.filesOperation
 
                         The list used to store sequences from fasta file.
 
-.. py:function:: RBP_package.fileOperation.read_label(label_file='')
+.. py:function:: PyRBP.fileOperation.read_label(label_file='')
 
     This function is used to read a label file in `txt` format in the following form.
     ::
