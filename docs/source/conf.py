@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'RBP_package_test'
+project = 'PyRBP'
 copyright = '2022, Yansong Wang'
 author = 'Yansong Wang'
 release = '0.1.0'
