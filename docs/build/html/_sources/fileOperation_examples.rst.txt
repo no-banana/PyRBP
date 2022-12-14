@@ -1,11 +1,11 @@
 File operation examples
 ===========================
 
-This page shows how to read a dataset using the ``fileOperation`` module of the ``RBP_package``
+This page shows how to read a dataset using the ``fileOperation`` module of the ``PyRBP``
 
 .. code-block:: py
 
-    from RBP_package.filesOperation import read_fasta_file, read_label
+    from PyRBP.filesOperation import read_fasta_file, read_label
 
 Load the sequences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -14,7 +14,7 @@ Function ``read_fasta_file`` reads a ``.txt``, ``.fasta`` or ``.fa`` text file a
 
 .. code-block:: py
 
-    fasta_path = '/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq' # Replace the path to load your own sequences of dataset
+    fasta_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq' # Replace the path to load your own sequences of dataset
 
     sequences = read_fasta_file(fasta_path)
     print(type(sequences))
@@ -33,7 +33,7 @@ Function ``read_label`` reads a text file and returns a numpy array containing l
 
 .. code-block:: py
 
-    label_path = '/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label' # Replace the path to load your own labels of dataset
+    label_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label' # Replace the path to load your own labels of dataset
 
     label = read_label(label_path)
     print(type(label))

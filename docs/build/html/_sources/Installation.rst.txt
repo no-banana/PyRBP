@@ -19,12 +19,12 @@ The following packages are requirements:
 - ``transformers``
 - ``yellowbrick``
 
-Install RBP_package
+Install PyRBP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-    conda create -n RBP_package python=3.7.6
-    conda activate RBP_package
-    git clone https://github.com/no-banana/RBP_package.git
-    cd RBP_package
+    conda create -n PyRBP python=3.7.6
+    conda activate PyRBP
+    git clone https://github.com/no-banana/PyRBP.git
+    cd PyRBP
     pip install -r requirements.txt

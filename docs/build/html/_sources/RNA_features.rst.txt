@@ -1,8 +1,8 @@
-RBP_package.Features
+PyRBP.Features
 ==================================
 
 
-.. py:method:: RBP_package.Features.generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, AUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, NPCP=False)
+.. py:method:: PyRBP.Features.generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, AUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, NPCP=False)
 
     This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).
 
@@ -67,9 +67,9 @@ RBP_package.Features
 
 
 
-.. py:function:: RBP_package.Features.generateDynamicLMFeatures(sequences, kmer=3, model='')
+.. py:function:: PyRBP.Features.generateDynamicLMFeatures(sequences, kmer=3, model='')
 
-    This function is used to generate the dynamic semantic information matrix of the sequence, in which we provide the fine-tuned ``BERT models (RBPBERT)`` for the RBP classification problem. The models can be downloaded from `figshare link <https://figshare.com/articles/software/LM_for_RBP_package/21383187>`_. When extraction is complete, the dimension of the feature matrix obtained is (``number of sequences``, ``number of tokens per sequence``, ``768``), where ``768`` indicates 768 hidden units of 12 attention heads in the last transformer layer.
+    This function is used to generate the dynamic semantic information matrix of the sequence, in which we provide the fine-tuned ``BERT models (RBPBERT)`` for the RBP classification problem. The models can be downloaded from `figshare link <https://figshare.com/articles/software/LM_for_PyRBP/21383187>`_. When extraction is complete, the dimension of the feature matrix obtained is (``number of sequences``, ``number of tokens per sequence``, ``768``), where ``768`` indicates 768 hidden units of 12 attention heads in the last transformer layer.
 
     :Parameters:
                 .. class:: sequences:list or array, necessary parameters
@@ -85,12 +85,12 @@ RBP_package.Features
                         The path where the downloaded ``RBPBERT`` model is stored, it should be noted that when passing parameters, only the `absolute path` to the folder where the model is located should be passed in, as in the example:
                         ::
 
-                            /home/wangyansong/RBP_package/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_3mer
+                            /home/wangyansong/PyRBP/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_3mer
 
 
-.. py:function:: RBP_package.Features.generateStaticLMFeatures(sequences, kmer=3, model='')
+.. py:function:: PyRBP.Features.generateStaticLMFeatures(sequences, kmer=3, model='')
 
-    There are four static semantic models available in the RBP_package: ``fasttext``, ``GloVe``, ``word2vec`` and ``doc2vec``. These models can be downloaded from `figshare link <https://figshare.com/articles/software/LM_for_RBP_package/21383187>`_.
+    There are four static semantic models available in the PyRBP: ``fasttext``, ``GloVe``, ``word2vec`` and ``doc2vec``. These models can be downloaded from `figshare link <https://figshare.com/articles/software/LM_for_RBP_package/21383187>`_.
 
     :Parameters:
                 .. class:: sequences:list or array, necessary parameters
@@ -114,7 +114,7 @@ RBP_package.Features
 
 
 
-.. py:function:: RBP_package.Features.generateStructureFeatures(dataset_path='', script_path='', basic_path='',  W=101, L=70, u=1, dataset_name='')
+.. py:function:: PyRBP.Features.generateStructureFeatures(dataset_path='', script_path='', basic_path='',  W=101, L=70, u=1, dataset_name='')
 
     This function calls ``RNAplfold`` to calculate locally stable secondary structure - pair probabilities [RNAplfold]_. The respective scripts of ``RNAplfold`` can be downloaded at `figshare link <https://figshare.com/articles/software/LM_for_RBP_package/21383187>`_.
 

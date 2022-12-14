@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RBP_package.featureSelection &mdash; RBP_package_test 0.1.0 documentation</title>
+  <title>PyRBP.featureSelection &mdash; RBP_package_test 0.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="RBP_package.evaluateClassifiers" href="evaluate_classifiers.html" />
-    <link rel="prev" title="RBP_package.Features" href="RNA_features.html" />
+    <link rel="next" title="PyRBP.evaluateClassifiers" href="evaluate_classifiers.html" />
+    <link rel="prev" title="PyRBP.Features" href="RNA_features.html" />
     <link href="_static/default.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -48,43 +48,43 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="file_operation.html">RBP_package.filesOperation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">RBP_package.Features</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">RBP_package.featureSelection</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="file_operation.html">PyRBP.filesOperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">PyRBP.Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyRBP.featureSelection</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#information-theoretical-based">Information theoretical based</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cife"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cife()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cmim"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cmim()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.disr"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.disr()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.icap"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.icap()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.jmi"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.jmi()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mifs"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mifs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mim"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mim()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.mrmr"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.mrmr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.cife"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.cife()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.cmim"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.cmim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.disr"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.disr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.icap"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.icap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.jmi"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.jmi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.mifs"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.mifs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.mim"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.mim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.mrmr"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.mrmr()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#similarity-based">Similarity based</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.fisherScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.fisherScore()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.relief_f"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.relief_f()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.traceRatio"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.traceRatio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.fisherScore"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.fisherScore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.relief_f"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.relief_f()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.traceRatio"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.traceRatio()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#sparse-learning-based">Sparse learning based</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.llL21"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.llL21()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.lsL21"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.lsL21()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.llL21"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.llL21()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.lsL21"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.lsL21()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#statistical-based">Statistical based</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.cfs"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.cfs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.chiSquare"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.chiSquare()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.fScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.fScore()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.giniIndex"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.giniIndex()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#RBP_package.featureSelection.tScore"><code class="docutils literal notranslate"><span class="pre">RBP_package.featureSelection.tScore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.cfs"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.cfs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.chiSquare"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.chiSquare()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.fScore"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.fScore()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.giniIndex"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.giniIndex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PyRBP.featureSelection.tScore"><code class="docutils literal notranslate"><span class="pre">PyRBP.featureSelection.tScore()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">RBP_package.evaluateClassifiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">RBP_package.metricsPlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">PyRBP.evaluateClassifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">PyRBP.metricsPlot</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
 <ul>
@@ -114,7 +114,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>RBP_package.featureSelection</li>
+      <li>PyRBP.featureSelection</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/feature_selection_methods.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -124,14 +124,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="rbp-package-featureselection">
-<h1>RBP_package.featureSelection<a class="headerlink" href="#rbp-package-featureselection" title="Permalink to this heading">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">RBP_package</span></code> integrates feature selection methods based on four different evaluation approaches (information theoretical based, similarity based, sparse learning based and statistical based).</p>
+  <section id="pyrbp-featureselection">
+<h1>PyRBP.featureSelection<a class="headerlink" href="#pyrbp-featureselection" title="Permalink to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">PyRBP</span></code> integrates feature selection methods based on four different evaluation approaches (information theoretical based, similarity based, sparse learning based and statistical based).</p>
 <section id="information-theoretical-based">
 <h2>Information theoretical based<a class="headerlink" href="#information-theoretical-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.cife">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cife</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cife" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.cife">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cife</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.cife" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Conditional Infomax Feature Extraction <a class="reference internal" href="#cife" id="id1"><span>[CIFE]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -163,8 +163,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.cmim">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cmim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cmim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.cmim">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cmim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.cmim" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Conditional Mutual Information Maximization <a class="reference internal" href="#cmim" id="id2"><span>[CMIM]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -196,8 +196,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.disr">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">disr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.disr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.disr">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">disr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.disr" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Double Input Symmetrical Relevance <a class="reference internal" href="#disr" id="id3"><span>[DISR]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -229,8 +229,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.icap">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">icap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.icap" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.icap">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">icap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.icap" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses mutual information <a class="reference internal" href="#icap" id="id4"><span>[ICAP]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -262,8 +262,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.jmi">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">jmi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.jmi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.jmi">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">jmi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.jmi" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Joint Mutual Information <a class="reference internal" href="#jmi" id="id5"><span>[JMI]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -295,8 +295,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.mifs">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mifs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.mifs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.mifs">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mifs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.mifs" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Mutual Information Feature Selection <a class="reference internal" href="#mifs" id="id6"><span>[MIFS]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -328,8 +328,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.mim">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.mim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.mim">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.mim" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Mutual Information Maximization <a class="reference internal" href="#mim" id="id7"><span>[MIM]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -361,8 +361,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.mrmr">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mrmr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.mrmr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.mrmr">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">mrmr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.mrmr" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Minimum Redundancy Maximum Relevance <a class="reference internal" href="#mrmr" id="id8"><span>[MRMR]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -397,8 +397,8 @@
 <section id="similarity-based">
 <h2>Similarity based<a class="headerlink" href="#similarity-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.fisherScore">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fisherScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.fisherScore" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.fisherScore">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fisherScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.fisherScore" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses  Fisher Score <a class="reference internal" href="#fisherscore" id="id9"><span>[fisherscore]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -430,8 +430,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.relief_f">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">relief_f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.relief_f" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.relief_f">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">relief_f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.relief_f" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses ReliefF <a class="reference internal" href="#relieff" id="id10"><span>[reliefF]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -463,8 +463,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.traceRatio">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">traceRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.traceRatio" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.traceRatio">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">traceRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.traceRatio" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Trace Ratio Criterion <a class="reference internal" href="#traceratio" id="id11"><span>[traceratio]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -499,8 +499,8 @@
 <section id="sparse-learning-based">
 <h2>Sparse learning based<a class="headerlink" href="#sparse-learning-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.llL21">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">llL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.llL21" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.llL21">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">llL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.llL21" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses l2,1-norm regularization-based feature selection method <a class="reference internal" href="#lll21" id="id12"><span>[lll21]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -532,8 +532,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.lsL21">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">lsL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.lsL21" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.lsL21">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">lsL21</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.lsL21" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses l2,1-norm regularization-based feature selection method <a class="reference internal" href="#lsl21" id="id13"><span>[lsl21]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -568,8 +568,8 @@
 <section id="statistical-based">
 <h2>Statistical based<a class="headerlink" href="#statistical-based" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.cfs">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.cfs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.cfs">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">cfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.cfs" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses correlation-based filter approach <a class="reference internal" href="#cfs" id="id14"><span>[CFS]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -601,8 +601,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.chiSquare">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">chiSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.chiSquare" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.chiSquare">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">chiSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.chiSquare" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Chi-Square Score <a class="reference internal" href="#chisquare" id="id15"><span>[chisquare]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -634,8 +634,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.fScore">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.fScore" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.fScore">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">fScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.fScore" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses F-score <a class="reference internal" href="#fscore" id="id16"><span>[fscore]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -667,8 +667,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.giniIndex">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">giniIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.giniIndex" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.giniIndex">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">giniIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.giniIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses Gini Index <a class="reference internal" href="#giniindex" id="id17"><span>[giniindex]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -705,8 +705,8 @@
 </dd>
 </dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="RBP_package.featureSelection.tScore">
-<span class="sig-prename descclassname"><span class="pre">RBP_package.featureSelection.</span></span><span class="sig-name descname"><span class="pre">tScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RBP_package.featureSelection.tScore" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyRBP.featureSelection.tScore">
+<span class="sig-prename descclassname"><span class="pre">PyRBP.featureSelection.</span></span><span class="sig-name descname"><span class="pre">tScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.featureSelection.tScore" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function uses T-score <a class="reference internal" href="#tscore" id="id18"><span>[tscore]</span></a> for feature selection and returns the corresponding best feature matrix.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -744,8 +744,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="RNA_features.html" class="btn btn-neutral float-left" title="RBP_package.Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="evaluate_classifiers.html" class="btn btn-neutral float-right" title="RBP_package.evaluateClassifiers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="RNA_features.html" class="btn btn-neutral float-left" title="PyRBP.Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="evaluate_classifiers.html" class="btn btn-neutral float-right" title="PyRBP.evaluateClassifiers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

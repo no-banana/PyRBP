@@ -48,11 +48,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="file_operation.html">RBP_package.filesOperation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">RBP_package.Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_selection_methods.html">RBP_package.featureSelection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">RBP_package.evaluateClassifiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">RBP_package.metricsPlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_operation.html">PyRBP.filesOperation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RNA_features.html">PyRBP.Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_selection_methods.html">PyRBP.featureSelection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluate_classifiers.html">PyRBP.evaluateClassifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_plots.html">PyRBP.metricsPlot</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
 <ul class="current">
@@ -99,20 +99,20 @@
              
   <section id="feature-selection-examples">
 <h1>Feature selection examples<a class="headerlink" href="#feature-selection-examples" title="Permalink to this heading">¶</a></h1>
-<p>The RBP_package integrates several feature selection methods and provides a simple interface, which requires only the features to be selected, the dataset label, and the number of features you want to selected.</p>
+<p>The PyRBP integrates several feature selection methods and provides a simple interface, which requires only the features to be selected, the dataset label, and the number of features you want to selected.</p>
 <section id="importing-related-modules">
 <h2>Importing related modules<a class="headerlink" href="#importing-related-modules" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">RBP_package.filesOperation</span> <span class="kn">import</span> <span class="n">read_fasta_file</span><span class="p">,</span> <span class="n">read_label</span>
-<span class="kn">from</span> <span class="nn">RBP_package.Features</span> <span class="kn">import</span> <span class="n">generateStaticLMFeatures</span><span class="p">,</span> <span class="n">generateStructureFeatures</span><span class="p">,</span> <span class="n">generateBPFeatures</span>
-<span class="kn">from</span> <span class="nn">RBP_package.featureSelection</span> <span class="kn">import</span> <span class="n">cife</span> <span class="c1"># Here we use cife method as an example.</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyRBP.filesOperation</span> <span class="kn">import</span> <span class="n">read_fasta_file</span><span class="p">,</span> <span class="n">read_label</span>
+<span class="kn">from</span> <span class="nn">PyRBP.Features</span> <span class="kn">import</span> <span class="n">generateStaticLMFeatures</span><span class="p">,</span> <span class="n">generateStructureFeatures</span><span class="p">,</span> <span class="n">generateBPFeatures</span>
+<span class="kn">from</span> <span class="nn">PyRBP.featureSelection</span> <span class="kn">import</span> <span class="n">cife</span> <span class="c1"># Here we use cife method as an example.</span>
 </pre></div>
 </div>
 </section>
 <section id="prepare-three-types-of-features-for-feature-selection">
 <h2>Prepare three types of features for feature selection<a class="headerlink" href="#prepare-three-types-of-features-for-feature-selection" title="Permalink to this heading">¶</a></h2>
 <p>The AGO1 dataset is used to generate biological features, semantic information and secondary structure information respectively.</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
-<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
+<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
 
 <span class="n">sequences</span> <span class="o">=</span> <span class="n">read_fasta_file</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">)</span>  <span class="c1"># read sequences and labels from given path</span>
 <span class="n">label</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">label_path</span><span class="p">)</span>
@@ -122,11 +122,11 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">biological_features</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c1"># generate static semantic information</span>
-<span class="n">static_semantic_information</span> <span class="o">=</span> <span class="n">generateStaticLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/staticRNALM/circleRNA/circRNA_3mer_fasttext&#39;</span><span class="p">)</span>
+<span class="n">static_semantic_information</span> <span class="o">=</span> <span class="n">generateStaticLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/staticRNALM/circleRNA/circRNA_3mer_fasttext&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">static_semantic_information</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="c1"># generate secondary structure information</span>
-<span class="n">structure_features</span> <span class="o">=</span> <span class="n">generateStructureFeatures</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">,</span> <span class="n">script_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package_test/src/RBP_package/RNAplfold&#39;</span><span class="p">,</span> <span class="n">basic_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package_test/src/circRNAdatasetAGO1&#39;</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">structure_features</span> <span class="o">=</span> <span class="n">generateStructureFeatures</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">,</span> <span class="n">script_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP_test/src/PyRBP/RNAplfold&#39;</span><span class="p">,</span> <span class="n">basic_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP_test/src/circRNAdatasetAGO1&#39;</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">structure_features</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>

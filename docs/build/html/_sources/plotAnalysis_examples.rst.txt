@@ -1,7 +1,7 @@
 Performance and data visualization examples
 ==================================================
 
-A variety of visualization functions are integrated in RBP_package, which can perform certain correlation analysis on feature data and also visualize the obtained performance index data for plotting.
+A variety of visualization functions are integrated in PyRBP, which can perform certain correlation analysis on feature data and also visualize the obtained performance index data for plotting.
 
 Importing related modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -9,14 +9,14 @@ Importing related modules
 .. code-block:: py
 
     # import file operation module
-    from RBP_package.filesOperation import *
+    from PyRBP.filesOperation import *
 
-    # import the visualize module in RBP_package
-    from RBP_package.metricsPlot import *
+    # import the visualize module in PyRBP
+    from PyRBP.metricsPlot import *
 
     # create CNN and RNN models for example
-    from RBP_package.evaluateClassifiers import createRNN, createCNN
-    from RBP_package.Features import generateDynamicLMFeatures, generateBPFeatures
+    from PyRBP.evaluateClassifiers import createRNN, createCNN
+    from PyRBP.Features import generateDynamicLMFeatures, generateBPFeatures
 
     # import some machine learning classifiers for example
     from sklearn.linear_model import LogisticRegression
@@ -37,7 +37,7 @@ Importing related modules
 Performance metrics visualization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section, we give examples of performance metrics visualization functions in ``RBP_package``, please note that when using these functions, you need to install ``yellowbrick``, ``seaborn`` and ``scikit-learn``
+In this section, we give examples of performance metrics visualization functions in ``PyRBP``, please note that when using these functions, you need to install ``yellowbrick``, ``seaborn`` and ``scikit-learn``
 
 
 
@@ -48,14 +48,14 @@ Here we prepare the relevant features as well as models to be used in different 
 
 .. code-block::
 
-    fasta_path = '/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq'
-    label_path = '/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label'
+    fasta_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq'
+    label_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label'
 
     sequences = read_fasta_file(fasta_path)  # read sequences and labels from given path
     label = read_label(label_path)
 
     # Generate dynamic semantic information for training deep learning models
-    dynamic_semantic_information = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer')
+    dynamic_semantic_information = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer')
 
     # Generate biological features for training machine learning classifiers
     biological_features = generateBPFeatures(sequences, PGKM=True)
@@ -73,7 +73,7 @@ Here we prepare the relevant features as well as models to be used in different 
         SVC(probability=True)
     ]
     # We use as an example the performance data obtained in the previous evaluation of machine learning classifiers
-    ml_metric_data = pd.read_csv('/home/wangyansong/RBP_package_test/src/ML_evalution_metrics.csv')
+    ml_metric_data = pd.read_csv('/home/wangyansong/PyRBP_test/src/ML_evalution_metrics.csv')
 
     callbacks = [EarlyStopping(monitor='val_loss', patience=5, verbose=2, mode='min', restore_best_weights=True)]
     labels_2D = to_categorical(label)
@@ -143,7 +143,7 @@ The format of the metric file is as follows:
 violin plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot violin figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot violin figure.
 
 .. code-block:: py
     
@@ -159,7 +159,7 @@ After the function finishes running, it will save a ``violinplot.png`` file in t
 box plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot box figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot box figure.
 
 .. code-block:: py
     
@@ -175,7 +175,7 @@ After the function finishes running, it will save a ``boxplot.png`` file in the 
 point plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot point figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot point figure.
 
 .. code-block:: py
     
@@ -191,7 +191,7 @@ After the function finishes running, it will save a ``pointplot.png`` file in th
 bar plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot bar figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot bar figure.
 
 .. code-block:: py
     
@@ -208,7 +208,7 @@ After the function finishes running, it will save a ``barplot.png`` file in the 
 Plot roc curve
 ------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot the roc curve.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot the roc curve.
 
 Deep learning models
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -273,7 +273,7 @@ After the function finishes running, it will save a ``roc_curve.png`` file in th
 Plot confusion matrix
 ------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot the confusion matrix.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot the confusion matrix.
 
 Deep learning models
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -329,7 +329,7 @@ When ``normalize`` is set to 'true', 'pred' or 'all', the resulting image is as 
 Plot det curve
 ----------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot the det curve.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot the det curve.
 
 Deep learning models
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -391,7 +391,7 @@ After the function finishes running, it will save a ``det_curve.png`` file in th
 Plot precision recall curve
 ------------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot the precision recall curve.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot the precision recall curve.
 
 Deep learning models
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -450,7 +450,7 @@ After the function finishes running, it will save a ``precision_recall_curve.png
 Plot partial dependence
 ------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot the partial dependence.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot the partial dependence.
 
 .. code-block:: py
 
@@ -470,7 +470,7 @@ After the function finishes running, it will save a ``partial_dependence.png`` f
 Plot prediction error bar
 ---------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot prediction error bar figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot prediction error bar figure.
 
 .. code-block:: py
 
@@ -486,7 +486,7 @@ After the function finishes running, it will save a ``prediction_error.png`` fil
 Plot descrimination threshold
 ---------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot descrimination threshold figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot descrimination threshold figure.
 
 .. code-block:: py
 
@@ -503,7 +503,7 @@ After the function finishes running, it will save a ``descrimination_threshold.p
 Plot learning curve
 ---------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot learning curve figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot learning curve figure.
 
 .. code-block:: py
 
@@ -521,7 +521,7 @@ After the function finishes running, it will save a ``learning_curve.png`` file 
 Plot cross validation score
 ---------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot cross validation score figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot cross validation score figure.
 
 .. code-block:: py
 
@@ -546,7 +546,7 @@ The functions in this section currently only support machine learning classifier
 Shap bar plot
 -----------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot shap bar figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot shap bar figure.
 
 .. code-block:: py
 
@@ -565,7 +565,7 @@ After the function finishes running, it will save a ``shap_bar.png`` file in the
 shap scatter plot
 ---------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot shap scatter figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot shap scatter figure.
 
 .. code-block:: py
 
@@ -582,7 +582,7 @@ After the function finishes running, it will save a ``shap_scatter.png`` file in
 shap waterfall plot
 -----------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot shap waterfall figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot shap waterfall figure.
 
 .. code-block:: py
 
@@ -598,7 +598,7 @@ After the function finishes running, it will save a ``shap_waterfall.png`` file 
 shap interaction scatter plot
 --------------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot shap interaction scatter figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot shap interaction scatter figure.
 
 .. code-block:: py
 
@@ -614,7 +614,7 @@ After the function finishes running, it will save a ``shap_interaction_scatter.p
 shap beeswarm plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot shap beeswarm figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot shap beeswarm figure.
 
 .. code-block:: py
 
@@ -630,7 +630,7 @@ After the function finishes running, it will save a ``shap_beeswarm.png`` file i
 shap heatmap plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot shap heatmap figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot shap heatmap figure.
 
 .. code-block:: py
 
@@ -649,7 +649,7 @@ After the function finishes running, it will save a ``shap_heatmap.png`` file in
 feature heatmap plot
 --------------------------
 
-This example shows how to use the ``RBP_package.metricsPlot`` module to plot feature heatmap figure.
+This example shows how to use the ``PyRBP.metricsPlot`` module to plot feature heatmap figure.
 
 .. code-block:: py
     
