@@ -62,7 +62,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">RBP_package basic usage flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">PyRBP basic usage flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileOperation_examples.html">File operation examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="featureGeneration_examples.html">Feature generation examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="featureSelection_examples.html">Feature selection examples</a></li>
@@ -102,7 +102,7 @@
 <h1>PyRBP.Features<a class="headerlink" href="#pyrbp-features" title="Permalink to this heading">¶</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="PyRBP.Features.generateBPFeatures">
-<span class="sig-prename descclassname"><span class="pre">PyRBP.Features.</span></span><span class="sig-name descname"><span class="pre">generateBPFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudoKNC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zCurve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcContent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AUSkew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAURatio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PGKM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NPCP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.Features.generateBPFeatures" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">PyRBP.Features.</span></span><span class="sig-name descname"><span class="pre">generateBPFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudoKNC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zCurve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcContent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAUSkew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAURatio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PGKM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DPCP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.Features.generateBPFeatures" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -138,8 +138,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">AUSkew:bool,</span> <span class="pre">default=False</span></span></dt>
-<dd><p>Whether to use AUSkew algorithm to generate features.</p>
+<span class="sig-name descname"><span class="pre">GCAUSkew:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use GCAUSkew algorithm to generate features.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -174,8 +174,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">NPCP:bool,</span> <span class="pre">default=False</span></span></dt>
-<dd><p>Whether to use NPCP algorithm to generate features.</p>
+<span class="sig-name descname"><span class="pre">DPCP:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use DPCP algorithm to generate features.</p>
 </dd></dl>
 
 </dd>

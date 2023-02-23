@@ -55,7 +55,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">RBP_package basic usage flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">PyRBP basic usage flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileOperation_examples.html">File operation examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="featureGeneration_examples.html">Feature generation examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="featureSelection_examples.html">Feature selection examples</a></li>
@@ -108,23 +108,23 @@
 <li><p>Full compatibility with other popular packages like scikit-learn and yellowbrick.</p></li>
 </ul>
 <p><strong>API Demo</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">RBP_package.filesOperation</span> <span class="kn">import</span> <span class="n">read_fasta_file</span><span class="p">,</span> <span class="n">read_label</span>
-<span class="kn">from</span> <span class="nn">RBP_package.Features</span> <span class="kn">import</span> <span class="n">generateDynamicLMFeatures</span><span class="p">,</span> <span class="n">generateStaticLMFeatures</span><span class="p">,</span> <span class="n">generateStructureFeatures</span><span class="p">,</span> <span class="n">generateBPFeatures</span>
-<span class="kn">from</span> <span class="nn">RBP_package.evaluateClassifiers</span> <span class="kn">import</span> <span class="n">evaluateDLclassifers</span>
-<span class="kn">from</span> <span class="nn">RBP_package.metricsPlot</span> <span class="kn">import</span> <span class="n">violinplot</span><span class="p">,</span> <span class="n">shap_interaction_scatter</span>
-<span class="kn">from</span> <span class="nn">RBP_package.featureSelection</span> <span class="kn">import</span> <span class="n">cife</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyRBP.filesOperation</span> <span class="kn">import</span> <span class="n">read_fasta_file</span><span class="p">,</span> <span class="n">read_label</span>
+<span class="kn">from</span> <span class="nn">PyRBP.Features</span> <span class="kn">import</span> <span class="n">generateDynamicLMFeatures</span><span class="p">,</span> <span class="n">generateStaticLMFeatures</span><span class="p">,</span> <span class="n">generateStructureFeatures</span><span class="p">,</span> <span class="n">generateBPFeatures</span>
+<span class="kn">from</span> <span class="nn">PyRBP.evaluateClassifiers</span> <span class="kn">import</span> <span class="n">evaluateDLclassifers</span>
+<span class="kn">from</span> <span class="nn">PyRBP.metricsPlot</span> <span class="kn">import</span> <span class="n">violinplot</span><span class="p">,</span> <span class="n">shap_interaction_scatter</span>
+<span class="kn">from</span> <span class="nn">PyRBP.featureSelection</span> <span class="kn">import</span> <span class="n">cife</span>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 
-<span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
-<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
+<span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
+<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
 
 <span class="n">sequences</span> <span class="o">=</span> <span class="n">read_fasta_file</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">)</span>  <span class="c1"># read sequences and labels from given path</span>
 <span class="n">label</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">label_path</span><span class="p">)</span>
 
 <span class="n">biological_features</span> <span class="o">=</span> <span class="n">generateBPFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">PGKM</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># generate biological features</span>
-<span class="n">bert_features</span> <span class="o">=</span> <span class="n">generateDynamicLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer&#39;</span><span class="p">)</span>  <span class="c1"># generate dynamic semantic information</span>
-<span class="n">static_features</span> <span class="o">=</span> <span class="n">generateStaticLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package/src/RBP_apckage_no_banana/staticRNALM/circleRNA/circRNA_3mer_fasttext&#39;</span><span class="p">)</span>
-<span class="n">structure_features</span> <span class="o">=</span> <span class="n">generateStructureFeatures</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">,</span> <span class="n">script_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package_test/src/RBP_package/RNAplfold&#39;</span><span class="p">,</span> <span class="n">basic_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/RBP_package_test/src/circRNAdatasetAGO1&#39;</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># generate secondary structure information</span>
+<span class="n">bert_features</span> <span class="o">=</span> <span class="n">generateDynamicLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/dynamicRNALM/circleRNA/pytorch_model_4mer&#39;</span><span class="p">)</span>  <span class="c1"># generate dynamic semantic information</span>
+<span class="n">static_features</span> <span class="o">=</span> <span class="n">generateStaticLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/staticRNALM/circleRNA/circRNA_3mer_fasttext&#39;</span><span class="p">)</span>
+<span class="n">structure_features</span> <span class="o">=</span> <span class="n">generateStructureFeatures</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">,</span> <span class="n">script_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/PyRBP/RNAplfold&#39;</span><span class="p">,</span> <span class="n">basic_path</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/circRNAdatasetAGO1&#39;</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># generate secondary structure information</span>
 
 
 <span class="n">refined_biological_features</span> <span class="o">=</span> <span class="n">cife</span><span class="p">(</span><span class="n">biological_features</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">num_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># refine the biologcial_feature using cife feature selection method</span>
@@ -210,7 +210,7 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">EXAMPLES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">RBP_package basic usage flow</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">PyRBP basic usage flow</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#load-the-dataset">Load the dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#generate-features-for-sequences">Generate features for sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basic_usage.html#perform-feature-selection-to-refine-the-biological-features">Perform feature selection to refine the biological features</a></li>
