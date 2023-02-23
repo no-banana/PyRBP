@@ -2,7 +2,7 @@ PyRBP.Features
 ==================================
 
 
-.. py:method:: PyRBP.Features.generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, AUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, NPCP=False)
+.. py:method:: PyRBP.Features.generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, GCAUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, DPCP=False)
 
     This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).
 
@@ -27,9 +27,9 @@ PyRBP.Features
 
                         Whether to use gcContent algorithm to generate features.
 
-                .. class:: AUSkew:bool, default=False
+                .. class:: GCAUSkew:bool, default=False
 
-                        Whether to use AUSkew algorithm to generate features.
+                        Whether to use GCAUSkew algorithm to generate features.
 
                 .. class:: GCAURatio:bool, default=False
 
@@ -51,9 +51,9 @@ PyRBP.Features
 
                         Used to determine the number of bases for the second tuple in `PGKM`, the value is limited to ``[1, 2]``.
 
-                .. class:: NPCP:bool, default=False
+                .. class:: DPCP:bool, default=False
 
-                        Whether to use NPCP algorithm to generate features.
+                        Whether to use DPCP algorithm to generate features.
     :Attributes:
                 .. class:: features:list of feature according to each sequence
 
