@@ -48,7 +48,7 @@ Currently, PyRBP includes more than **[10 RNA sequence characterization methods]
 - &#x1F34E; Powerful, customizable performance and feature analysis visualizer.
 - &#x1F34E; Full compatibility with other popular packages like [scikit-learn](https://scikit-learn.org/stable/) and [yellowbrick](https://www.scikit-yb.org/en/latest/index.html).
 
-##Generating features using PyRBP with 7 Lines of Code:
+## Generating features using PyRBP with 7 Lines of Code:
 
 ```python
 # Generate RNA physicochemical properties
