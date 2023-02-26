@@ -32,7 +32,7 @@
 
 
 **Release: 
-  <a href="https://github.com/ZhiningLiu1998/imbalanced-ensemble/tree/main/imbalanced_ensemble">Need to revise</a> |
+  <a href="https://github.com/no-banana/PyRBP/tree/main/PyRBP">Source</a> |
   <a href="https://rbp-package.readthedocs.io/en/latest/release_history.html"> Changelog </a>  
   Links:
   <a href="https://github.com/no-banana/PyRBP#generating-features-using-PyRBP-with-7-lines-of-Code">Getting Started</a> |
