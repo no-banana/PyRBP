@@ -42,7 +42,7 @@
 ***PyRBP*** is a Python library for quick generating characterization matrices, feature selection, models evaluation, feature analysis and performance visualization of **circRNA or linear RNA sequence data**. 
 Currently, PyRBP includes more than **[10 RNA sequence characterization methods](#list-of-implemented-methods)**, including three classes of characterization views: dynamic and static semantic information, RNA secondary structure information and RNA physicochemical properties.
 
-***PyRBP*** is constructed based on multiple [RNA-RBP binding semantic models](https://figshare.com/articles/software/LM_for_RBP_package/21383187) (RBPBERT, FastText, GloVe, Word2Vec, Doc2Vec) developed by ourselves. It provides three **advanced features**:
+***PyRBP*** is constructed based on multiple [RNA-RBP binding semantic models](https://figshare.com/articles/software/LM_for_RBP_package/21383187) (RBPBERT, FastText, GloVe, Word2Vec, Doc2Vec) developed by ourselves. It provides four **advanced features**:
 - &#x1F34E; Unified, easy-to-use APIs, detailed [documentation](https://rbp-package.readthedocs.io/) and [examples](https://rbp-package.readthedocs.io/en/latest/basic_usage.html).
 - &#x1F34E; Capable for out-of-the-box ***RNA-RBP binding event*** characterization and downstream experiments.
 - &#x1F34E; Powerful, customizable performance and feature analysis visualizer.
