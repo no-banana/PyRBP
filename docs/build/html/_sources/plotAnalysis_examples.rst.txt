@@ -48,14 +48,14 @@ Here we prepare the relevant features as well as models to be used in different 
 
 .. code-block::
 
-    fasta_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq'
-    label_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label'
+    fasta_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/seq'
+    label_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/label'
 
     sequences = read_fasta_file(fasta_path)  # read sequences and labels from given path
     label = read_label(label_path)
 
     # Generate dynamic semantic information for training deep learning models
-    dynamic_semantic_information = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer')
+    dynamic_semantic_information = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/PyRBP/src/dynamicRNALM/circleRNA/pytorch_model_4mer')
 
     # Generate biological features for training machine learning classifiers
     biological_features = generateBPFeatures(sequences, PGKM=True)
@@ -73,7 +73,7 @@ Here we prepare the relevant features as well as models to be used in different 
         SVC(probability=True)
     ]
     # We use as an example the performance data obtained in the previous evaluation of machine learning classifiers
-    ml_metric_data = pd.read_csv('/home/wangyansong/PyRBP_test/src/ML_evalution_metrics.csv')
+    ml_metric_data = pd.read_csv('/home/wangyansong/PyRBP/src/ML_evalution_metrics.csv')
 
     callbacks = [EarlyStopping(monitor='val_loss', patience=5, verbose=2, mode='min', restore_best_weights=True)]
     labels_2D = to_categorical(label)

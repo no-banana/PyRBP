@@ -20,8 +20,8 @@ The AGO1 dataset is used to generate biological features, semantic information a
 
 .. code-block:: py
 
-    fasta_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq'
-    label_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label'
+    fasta_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/seq'
+    label_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/label'
 
     sequences = read_fasta_file(fasta_path)  # read sequences and labels from given path
     label = read_label(label_path)
@@ -31,11 +31,11 @@ The AGO1 dataset is used to generate biological features, semantic information a
     print(biological_features.shape)
 
     # generate static semantic information
-    static_semantic_information = generateStaticLMFeatures(sequences, kmer=3, model='/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/staticRNALM/circleRNA/circRNA_3mer_fasttext')
+    static_semantic_information = generateStaticLMFeatures(sequences, kmer=3, model='/home/wangyansong/PyRBP/src/staticRNALM/circleRNA/circRNA_3mer_fasttext')
     print(static_semantic_information.shape)
 
     # generate secondary structure information
-    structure_features = generateStructureFeatures(fasta_path, script_path='/home/wangyansong/PyRBP_test/src/PyRBP/RNAplfold', basic_path='/home/wangyansong/PyRBP_test/src/circRNAdatasetAGO1', W=101, L=70, u=1)
+    structure_features = generateStructureFeatures(fasta_path, script_path='/home/wangyansong/PyRBP/RNAplfold', basic_path='/home/wangyansong/PyRBP/src/circRNAdatasetAGO1', W=101, L=70, u=1)
     print(structure_features.shape)
 
 

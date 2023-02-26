@@ -41,7 +41,7 @@ We generate three types of features as examples, in generating biological featur
     biological_features = generateBPFeatures(sequences, PGKM=True)  # generate biological features
     bert_features = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/PyRBP/src/dynamicRNALM/circleRNA/pytorch_model_4mer')  # generate dynamic semantic information
     static_features = generateStaticLMFeatures(sequences, kmer=3, model='/home/wangyansong/PyRBP/src/staticRNALM/circleRNA/circRNA_3mer_fasttext') # static semantic information
-    structure_features = generateStructureFeatures(fasta_path, script_path='/home/wangyansong/PyRBP/src/PyRBP/RNAplfold', basic_path='/home/wangyansong/PyRBP/src/circRNAdatasetAGO1', W=101, L=70, u=1)  # generate secondary structure information
+    structure_features = generateStructureFeatures(fasta_path, script_path='/home/wangyansong/PyRBP/src/RNAplfold', basic_path='/home/wangyansong/PyRBP/src/circRNAdatasetAGO1', W=101, L=70, u=1)  # generate secondary structure information
 
 Perform feature selection to refine the biological features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

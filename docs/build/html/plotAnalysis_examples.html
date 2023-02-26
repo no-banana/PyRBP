@@ -177,14 +177,14 @@
 <section id="data-preparation">
 <h3>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">¶</a></h3>
 <p>Here we prepare the relevant features as well as models to be used in different plot functions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
-<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fasta_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/seq&#39;</span>
+<span class="n">label_path</span> <span class="o">=</span> <span class="s1">&#39;/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/label&#39;</span>
 
 <span class="n">sequences</span> <span class="o">=</span> <span class="n">read_fasta_file</span><span class="p">(</span><span class="n">fasta_path</span><span class="p">)</span>  <span class="c1"># read sequences and labels from given path</span>
 <span class="n">label</span> <span class="o">=</span> <span class="n">read_label</span><span class="p">(</span><span class="n">label_path</span><span class="p">)</span>
 
 <span class="c1"># Generate dynamic semantic information for training deep learning models</span>
-<span class="n">dynamic_semantic_information</span> <span class="o">=</span> <span class="n">generateDynamicLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer&#39;</span><span class="p">)</span>
+<span class="n">dynamic_semantic_information</span> <span class="o">=</span> <span class="n">generateDynamicLMFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">kmer</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/dynamicRNALM/circleRNA/pytorch_model_4mer&#39;</span><span class="p">)</span>
 
 <span class="c1"># Generate biological features for training machine learning classifiers</span>
 <span class="n">biological_features</span> <span class="o">=</span> <span class="n">generateBPFeatures</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">PGKM</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -202,7 +202,7 @@
     <span class="n">SVC</span><span class="p">(</span><span class="n">probability</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="p">]</span>
 <span class="c1"># We use as an example the performance data obtained in the previous evaluation of machine learning classifiers</span>
-<span class="n">ml_metric_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/wangyansong/PyRBP_test/src/ML_evalution_metrics.csv&#39;</span><span class="p">)</span>
+<span class="n">ml_metric_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/wangyansong/PyRBP/src/ML_evalution_metrics.csv&#39;</span><span class="p">)</span>
 
 <span class="n">callbacks</span> <span class="o">=</span> <span class="p">[</span><span class="n">EarlyStopping</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">restore_best_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
 <span class="n">labels_2D</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
