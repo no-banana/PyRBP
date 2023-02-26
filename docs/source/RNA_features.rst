@@ -85,7 +85,7 @@ PyRBP.Features
                         The path where the downloaded ``RBPBERT`` model is stored, it should be noted that when passing parameters, only the `absolute path` to the folder where the model is located should be passed in, as in the example:
                         ::
 
-                            /home/wangyansong/PyRBP/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_3mer
+                            /home/wangyansong/PyRBP/src/dynamicRNALM/circleRNA/pytorch_model_3mer
 
 
 .. py:function:: PyRBP.Features.generateStaticLMFeatures(sequences, kmer=3, model='')

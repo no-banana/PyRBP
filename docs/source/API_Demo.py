@@ -5,8 +5,8 @@ from PyRBP.metricsPlot import violinplot, shap_interaction_scatter
 from PyRBP.featureSelection import cife
 from sklearn.svm import SVC
 
-fasta_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq'
-label_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label'
+fasta_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/seq'
+label_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/label'
 
 sequences = read_fasta_file(fasta_path)  # read sequences and labels from given path
 label = read_label(label_path)

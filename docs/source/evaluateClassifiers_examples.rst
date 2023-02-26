@@ -20,8 +20,8 @@ A total of 11 machine learning classifiers are included in the ``PyRBP``. After 
 
 .. code-block:: py
 
-    fasta_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/seq'
-    label_path = '/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/RNA_datasets/circRNAdataset/AGO1/label'
+    fasta_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/seq'
+    label_path = '/home/wangyansong/PyRBP/src/RNA_datasets/circRNAdataset/AGO1/label'
 
     sequences = read_fasta_file(fasta_path)  # read sequences and labels from given path
     label = read_label(label_path)
@@ -76,7 +76,7 @@ We use the same dataset as previous example to evaluate deep learning models.
 .. code-block:: py
 
     # Generating 4mer dynamic semantic information for evaluating models.
-    dynamic_semantic_information = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/PyRBP/src/RBP_apckage_no_banana/dynamicRNALM/circleRNA/pytorch_model_4mer')
+    dynamic_semantic_information = generateDynamicLMFeatures(sequences, kmer=4, model='/home/wangyansong/PyRBP/src/dynamicRNALM/circleRNA/pytorch_model_4mer')
 
     # Perform a 5-fold cross-validation of the machine learning classifier using biological features, and store the result file in the current folder.
     evaluateDLclassifers(dynamic_semantic_information, folds=5, labels=label, file_path='./', shuffle=True)
