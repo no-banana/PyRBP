@@ -35,7 +35,7 @@
   <a href="https://github.com/ZhiningLiu1998/imbalanced-ensemble/tree/main/imbalanced_ensemble">Need to revise</a> |
   <a href="https://rbp-package.readthedocs.io/en/latest/release_history.html"> Changelog </a>  
   Links:
-  <a href="https://github.com/ZhiningLiu1998/imbalanced-ensemble#5-min-quick-start-with-imbens">Getting Started (need to revise)</a> |
+  <a href="https://github.com/no-banana/PyRBP#generating-features-using-pyrbp-with-7-lines-of-code">Getting Started (need to revise)</a> |
   <a href="https://rbp-package.readthedocs.io/">API Reference</a> |
   <a href="https://rbp-package.readthedocs.io/en/latest/basic_usage.html">Examples</a>**
   
@@ -48,7 +48,8 @@ Currently, PyRBP includes more than **[10 RNA sequence characterization methods]
 - &#x1F34E; Powerful, customizable performance and feature analysis visualizer.
 - &#x1F34E; Full compatibility with other popular packages like [scikit-learn](https://scikit-learn.org/stable/) and [yellowbrick](https://www.scikit-yb.org/en/latest/index.html).
 
-**Generating features using PyRBP with 7 Lines of Code:**
+##Generating features using PyRBP with 7 Lines of Code:
+
 ```python
 # Generate RNA physicochemical properties
 from PyRBP.Features import generateBPFeatures
@@ -63,6 +64,7 @@ refined_features = cife(bp_features, label, num_features=10)
 clf = SVC(probability=True)
 shap_interaction_scatter(refined_features, label, clf=clf, sample_size=(0, 100), feature_size=(0, 10), image_path='./')
 ```
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
