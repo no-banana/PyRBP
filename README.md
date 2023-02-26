@@ -18,7 +18,9 @@
   <a href="https://github.com/no-banana/PyRBP/issues">
     <img src="https://img.shields.io/github/issues/no-banana/PyRBP">
   </a>
-  <img alt="GitHub" src="https://img.shields.io/github/license/no-banana/PyRBP">
+  <a href="https://github.com/no-banana/PyRBP/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/no-banana/PyRBP">
+  </a>
   <a href="https://github.com/no-banana/PyRBP/graphs/traffic">
     <img src="https://visitor-badge.glitch.me/badge?page_id=no-banana.PyRBP">
   </a>
