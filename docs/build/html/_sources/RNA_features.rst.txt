@@ -2,7 +2,7 @@ PyRBP.Features
 ==================================
 
 
-.. py:method:: PyRBP.Features.generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, GCAUSkew=False, GCAURatio=False, PGKM=False, gapValue=1, kValue=2, mValue=2, DPCP=False)
+.. py:method:: PyRBP.Features.generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zigzag_coding=False, guanine_cytosine_Quantity=False, nucleotide_tilt=False, percentage_of_bases=False, PGKM=False, gapValue=1, kValue=2, mValue=2, DPCP=False)
 
     This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).
 
@@ -19,21 +19,21 @@ PyRBP.Features
 
                         Used to determine the number of bases for each tuple in `pseudoKNC` in the values of ``[3, 4, 5]``.
 
-                .. class:: zCurve:bool, default=False
+                .. class:: zigzag_coding:bool, default=False
 
-                        Whether to use zCurve algorithm to generate features.
+                        Whether to use zigzag_coding algorithm to generate features.
 
-                .. class:: gcContent:bool, default=False
+                .. class:: guanine_cytosine_Quantity:bool, default=False
 
-                        Whether to use gcContent algorithm to generate features.
+                        Whether to use guanine_cytosine_Quantity algorithm to generate features.
 
-                .. class:: GCAUSkew:bool, default=False
+                .. class:: nucleotide_tilt:bool, default=False
 
-                        Whether to use GCAUSkew algorithm to generate features.
+                        Whether to use nucleotide_tilt algorithm to generate features.
 
-                .. class:: GCAURatio:bool, default=False
+                .. class:: percentage_of_bases:bool, default=False
 
-                        Whether to use GCAURatio algorithm to generate features.
+                        Whether to use percentage_of_bases algorithm to generate features.
 
                 .. class:: PGKM:bool, default=False
 

@@ -102,7 +102,7 @@
 <h1>PyRBP.Features<a class="headerlink" href="#pyrbp-features" title="Permalink to this heading">¶</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="PyRBP.Features.generateBPFeatures">
-<span class="sig-prename descclassname"><span class="pre">PyRBP.Features.</span></span><span class="sig-name descname"><span class="pre">generateBPFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudoKNC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zCurve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcContent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAUSkew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GCAURatio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PGKM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DPCP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.Features.generateBPFeatures" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">PyRBP.Features.</span></span><span class="sig-name descname"><span class="pre">generateBPFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudoKNC</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ktuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zigzag_coding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guanine_cytosine_Quantity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nucleotide_tilt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentage_of_bases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PGKM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DPCP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyRBP.Features.generateBPFeatures" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to generate various types of features based on the sequences (physicochemical features, sequence properties, base composition, etc.).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -126,26 +126,26 @@
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">zCurve:bool,</span> <span class="pre">default=False</span></span></dt>
-<dd><p>Whether to use zCurve algorithm to generate features.</p>
+<span class="sig-name descname"><span class="pre">zigzag_coding:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use zigzag_coding algorithm to generate features.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">gcContent:bool,</span> <span class="pre">default=False</span></span></dt>
-<dd><p>Whether to use gcContent algorithm to generate features.</p>
+<span class="sig-name descname"><span class="pre">guanine_cytosine_Quantity:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use guanine_cytosine_Quantity algorithm to generate features.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">GCAUSkew:bool,</span> <span class="pre">default=False</span></span></dt>
-<dd><p>Whether to use GCAUSkew algorithm to generate features.</p>
+<span class="sig-name descname"><span class="pre">nucleotide_tilt:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use nucleotide_tilt algorithm to generate features.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">GCAURatio:bool,</span> <span class="pre">default=False</span></span></dt>
-<dd><p>Whether to use GCAURatio algorithm to generate features.</p>
+<span class="sig-name descname"><span class="pre">percentage_of_bases:bool,</span> <span class="pre">default=False</span></span></dt>
+<dd><p>Whether to use percentage_of_bases algorithm to generate features.</p>
 </dd></dl>
 
 <dl class="py class">
