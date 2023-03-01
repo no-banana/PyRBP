@@ -43,7 +43,7 @@ def generateStructureFeatures(dataset_path, script_path, basic_path, W, L, u, da
     return features
 
 
-def generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcContent=False, GCAUSkew=False, GCAURatio=False,
+def generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zigzag_coding=False, guanine_cytosine_Quantity=False, nucleotide_tilt=False, percentage_of_bases=False,
                      PGKM=False, gapValue=1, kValue=2, mValue=2, DPCP=False):
     features = []
     for seq in sequences:
@@ -54,19 +54,19 @@ def generateBPFeatures(sequences, pseudoKNC=False, ktuple=3, zCurve=False, gcCon
             temp = generate_pseudoKNC(seq, ktuple)
             for item in temp:
                 feature.append(item)
-        if zCurve == True:
+        if zigzag_coding == True:
             temp = generate_zCurve(seq)
             for item in temp:
                 feature.append(item)
-        if gcContent == True:
+        if guanine_cytosine_Quantity == True:
             temp = generate_gcContent(seq)
             for item in temp:
                 feature.append(item)
-        if GCAUSkew == True:
+        if nucleotide_tilt == True:
             temp = generate_GCAUSkew(seq)
             for item in temp:
                 feature.append(item)
-        if GCAURatio == True:
+        if percentage_of_bases == True:
             temp = generate_GCAURatio(seq)
             for item in temp:
                 feature.append(item)
