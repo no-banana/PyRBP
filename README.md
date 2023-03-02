@@ -1,5 +1,5 @@
 <h2 align="center">
-  PyRBP: A framework for characterizing RNA-RBP binding event in Python
+  PyRBP: A Python Framework for Reliable Identification and Characterization of High-Throughput RNA-Binding Protein Events
 </h2>
 
 <p align="center">
