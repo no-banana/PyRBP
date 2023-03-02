@@ -5,9 +5,9 @@
 
 Welcome to PyRBP's documentation!
 =========================================================
-**Date:** October 25, 2022. **Version:** 0.1.0
+**Date:** March 2, 2023. **Version:** 0.1.0
 
-**paper:** it depends
+**paper:** PyRBP: A Python Framework for Reliable Identification and Characterization of High-Throughput RNA-Binding Protein Events.
 
 **Citing Us:**
 
