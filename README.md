@@ -140,4 +140,7 @@ IMBENS is designed to be compatible with [scikit-learn](https://scikit-learn.org
 
 > **Note: `PyRBP` is still under development, please see [API reference](https://rbp-package.readthedocs.io/en/latest/index.html) for the latest list.**
 
+## Contact:
+Thank you for using PyRBP! Any questions, suggestions or advices are welcome.
+email address:[lixt314@jlu.edu.cn](lixt314@jlu.edu.cn);[wys21@mails.jlu.edu.cn](wys21@mails.jlu.edu.cn)
 
