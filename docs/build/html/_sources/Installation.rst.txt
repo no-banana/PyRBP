@@ -40,12 +40,6 @@ skfeature installation
 
 ::
 
-    # for linux
     git clone https://github.com/jundongl/scikit-feature.git
     cd scikit-feature
     python setup.py install
-
-    # for Windows
-    git clone https://github.com/jundongl/scikit-feature.git
-    cd scikit-feature
-    setup.py install
