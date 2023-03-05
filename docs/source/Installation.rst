@@ -43,3 +43,11 @@ skfeature installation
     git clone https://github.com/jundongl/scikit-feature.git
     cd scikit-feature
     python setup.py install
+
+Note for OSX users: due to its use of OpenMP, glove-python-binary does not compile under Clang. To install it, you will need a reasonably recent version of gcc (from Homebrew for instance). This should be picked up by ``setup.py``.
+
+::
+
+    git clone https://github.com/maciejkula/glove-python.git
+    cd glove-python
+    python setup.py install
