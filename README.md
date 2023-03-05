@@ -87,7 +87,8 @@ After this, the torch also needs to be installed separately according to the cud
 ```shell
 $ pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-scikit-feature can be installed in a virtual environment with the following command
+scikit-feature can be installed in a virtual environment with the following command 
+
 For Linux:
 ```shell
 git clone https://github.com/jundongl/scikit-feature.git
@@ -100,6 +101,8 @@ git clone https://github.com/jundongl/scikit-feature.git
 cd scikit-feature
 setup.py install
 ```
+
+The language models used in PyRBP can be downloaded from [figshare](https://figshare.com/articles/software/LM_for_RBP_package/21383187)
 
 PyRBP requires following dependencies:
 
@@ -148,10 +151,10 @@ IMBENS is designed to be compatible with [scikit-learn](https://scikit-learn.org
   - *[Secondary structure information](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateStructureFeatures)*
 - **RNA physicochemical properties**
   - *[pseudoKNC](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[z-Curve](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[GC-Content](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[GCAU-Skew](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
-  - *[GCAU-Ratio](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
+  - *[zigzag coding](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
+  - *[Guanine cytosine Quantity](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
+  - *[Nucleotides tilt](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
+  - *[Percentage of bases](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
   - *[Positional gapped k-m-tuple pairs](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
   - *[DPCP](https://rbp-package.readthedocs.io/en/latest/RNA_features.html#PyRBP.Features.generateBPFeatures)*
 
