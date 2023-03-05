@@ -96,6 +96,14 @@ python setup.py install
 
 The language models used in PyRBP can be downloaded from [figshare](https://figshare.com/articles/software/LM_for_RBP_package/21383187)
 
+Note for OSX users: due to its use of OpenMP, glove-python-binary does not compile under Clang. To install it, you will need a reasonably recent version of `gcc` (from Homebrew for instance). This should be picked up by `setup.py`.
+```shell
+git clone https://github.com/maciejkula/glove-python.git
+cd glove-python
+python setup.py install
+```
+
+
 PyRBP requires following dependencies:
 
 - [Python](https://www.python.org/) (>=3.6)
