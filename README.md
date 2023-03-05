@@ -81,7 +81,24 @@ $ conda create -n PyRBP python=3.7.6            # create a virtual environment n
 $ conda activate PyRBP                          # activate the environment  
 $ git clone https://github.com/no-banana/PyRBP.git # clone this repository
 $ cd PyRBP
-$ pip install -r requirements.txt               # install the dependencies of PyRBP
+$ pip install -r requirement.txt               # install the dependencies of PyRBP
+```
+After this, the torch also needs to be installed separately according to the cuda version of your device, e.g. CUDA 10.2 can be used with the following command.
+```shell
+$ pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+```
+scikit-feature can be installed in a virtual environment with the following command
+For Linux:
+```shell
+git clone https://github.com/jundongl/scikit-feature.git
+cd scikit-feature
+python setup.py install
+```
+For Windows:
+```shell
+git clone https://github.com/jundongl/scikit-feature.git
+cd scikit-feature
+setup.py install
 ```
 
 PyRBP requires following dependencies:
