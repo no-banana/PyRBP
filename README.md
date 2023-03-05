@@ -95,12 +95,6 @@ git clone https://github.com/jundongl/scikit-feature.git
 cd scikit-feature
 python setup.py install
 ```
-For Windows:
-```shell
-git clone https://github.com/jundongl/scikit-feature.git
-cd scikit-feature
-setup.py install
-```
 
 The language models used in PyRBP can be downloaded from [figshare](https://figshare.com/articles/software/LM_for_RBP_package/21383187)
 
